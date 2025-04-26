@@ -424,6 +424,39 @@
             // --- Modal Functions ---
 
             /**
+             * Adds an image element to the modal image container. Includes error handling.
+             * @param {string} src - Image source URL.
+             * @param {string} alt - Image alt text.
+             */
+             function addImageToModal(src, alt) {
+                // Add console log before setting src
+                console.log(`Attempting to load image: ${src}`);
+                const img = document.createElement('img');
+                // Validate src before assigning
+                if (typeof src !== 'string' || src.trim() === '') {
+                    console.error(`Invalid image src provided: ${src}. Displaying fallback.`);
+                    img.src = `https://placehold.co/400x300/fecaca/991b1b?text=Invalid+Image+Source`;
+                    img.alt = 'Error: Invalid image source provided - ' + (alt || 'No description available.');
+                } else {
+                    img.src = src;
+                    img.alt = alt || 'Image description not provided.'; // Provide default alt text
+                }
+                img.loading = 'lazy'; // Defer loading off-screen images
+                img.className = 'w-full h-auto rounded shadow object-contain mx-auto border border-gray-200 bg-gray-50'; // Style the image
+
+                // Error handling for broken image links or network issues
+                img.onerror = () => {
+                    // Add console log inside onerror
+                    console.error(`ERROR loading image: ${img.src}. Displaying fallback.`);
+                    // Refined fallback text in alt attribute and placeholder
+                    img.src = `https://placehold.co/400x300/fecaca/991b1b?text=External+Image+Load+Failed`; // Display error placeholder
+                    img.alt = 'Error: Failed to load external image - ' + (alt || 'No description available.'); // Update alt text
+                };
+                modalImageContainer.appendChild(img); // Add the image to the container
+            }
+
+
+            /**
              * Opens the modal and populates it with case study data.
              * @param {object} data - The case study data object from button attributes.
              */
@@ -433,12 +466,13 @@
                     console.error("Modal elements missing from the DOM.");
                     return;
                 }
-                 // Basic check for essential data properties including images
-                 // *** FIX: Use bracket notation for validation check ***
-                 if (!data.title || !data.vignette || !data.imaging || !data.diagnosisTitle || !data.diagnosisExplanation || !data['imagePlaceholder-1'] || !data['imageAlt-1']) {
-                     console.error("Incomplete case data provided (missing title, vignette, imaging, diagnosis, or image1):", data);
+
+                 // Validation check using direct property access (since data is now built with getAttribute)
+                 if (!data.title || !data.vignette || !data.imaging || !data.diagnosisTitle || !data.diagnosisExplanation || !data.imagePlaceholder1 || !data.imageAlt1) {
+                     console.error("Incomplete case data passed to openModal:", data);
                      return;
                  }
+
 
                 // Store data and reference to the button that opened the modal
                 currentCaseData = data;
@@ -449,14 +483,13 @@
                 modalVignette.textContent = data.vignette;
                 modalImagingText.textContent = data.imaging;
 
-                // Clear previous images and add new ones
-                modalImageContainer.innerHTML = ''; // Clear previous images
-                // Add first image (required) using bracket notation
-                addImageToModal(data['imagePlaceholder-1'], data['imageAlt-1']);
-                // Add second image if it exists using bracket notation
-                if (data['imagePlaceholder-2'] && data['imageAlt-2']) {
-                    addImageToModal(data['imagePlaceholder-2'], data['imageAlt-2']);
+                // Clear previous images and add new ones using direct data properties
+                modalImageContainer.innerHTML = '';
+                addImageToModal(data.imagePlaceholder1, data.imageAlt1);
+                if (data.imagePlaceholder2 && data.imageAlt2) {
+                    addImageToModal(data.imagePlaceholder2, data.imageAlt2);
                 }
+
                  // Adjust grid layout based on number of images successfully added
                  const imageCount = modalImageContainer.children.length;
                  modalImageContainer.className = `grid gap-4 mt-4 ${imageCount > 1 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'}`;
@@ -484,31 +517,6 @@
 
                 // Add event listeners for modal interaction
                 addModalEventListeners();
-            }
-
-            /**
-             * Adds an image element to the modal image container. Includes error handling.
-             * @param {string} src - Image source URL.
-             * @param {string} alt - Image alt text.
-             */
-             function addImageToModal(src, alt) {
-                // Add console log before setting src
-                console.log(`Attempting to load image: ${src}`);
-                const img = document.createElement('img');
-                img.src = src;
-                img.alt = alt;
-                img.loading = 'lazy'; // Defer loading off-screen images
-                img.className = 'w-full h-auto rounded shadow object-contain mx-auto border border-gray-200 bg-gray-50'; // Style the image
-
-                // Error handling for broken image links
-                img.onerror = () => {
-                    // Add console log inside onerror
-                    console.error(`ERROR loading image: ${src}. Displaying fallback.`);
-                    // *** UPDATE: Refined fallback text in alt attribute ***
-                    img.src = `https://placehold.co/400x300/fecaca/991b1b?text=External+Image+Load+Failed`; // Display error placeholder
-                    img.alt = 'Error: Failed to load external image - ' + alt; // Update alt text
-                };
-                modalImageContainer.appendChild(img); // Add the image to the container
             }
 
 
@@ -647,24 +655,26 @@
             if (mainContent) {
                 mainContent.addEventListener('click', (event) => {
                     const button = event.target.closest('.read-more-btn');
-                    if (button && button.dataset) {
-                         // *** FIX: Use bracket notation to access hyphenated data attributes ***
+                    if (button) { // Check if a button was clicked
+                         // *** Use getAttribute to read data attributes directly ***
                          const caseData = {
-                            title: button.dataset.title,
-                            vignette: button.dataset.vignette,
-                            imaging: button.dataset.imaging,
-                            diagnosisTitle: button.dataset.diagnosisTitle,
-                            diagnosisExplanation: button.dataset.diagnosisExplanation,
-                            'imagePlaceholder-1': button.dataset['imagePlaceholder-1'], // Correct access
-                            'imageAlt-1': button.dataset['imageAlt-1'],             // Correct access
-                            'imagePlaceholder-2': button.dataset['imagePlaceholder-2'], // Correct access
-                            'imageAlt-2': button.dataset['imageAlt-2']              // Correct access
+                            title: button.getAttribute('data-title'),
+                            vignette: button.getAttribute('data-vignette'),
+                            imaging: button.getAttribute('data-imaging'),
+                            diagnosisTitle: button.getAttribute('data-diagnosis-title'),
+                            diagnosisExplanation: button.getAttribute('data-diagnosis-explanation'),
+                            imagePlaceholder1: button.getAttribute('data-image-placeholder-1'), // Use getAttribute
+                            imageAlt1: button.getAttribute('data-image-alt-1'),             // Use getAttribute
+                            imagePlaceholder2: button.getAttribute('data-image-placeholder-2'), // Use getAttribute
+                            imageAlt2: button.getAttribute('data-image-alt-2')              // Use getAttribute
                          };
-                         // *** FIX: Update validation check to use bracket notation ***
-                         if (caseData.title && caseData.vignette && caseData.imaging && caseData.diagnosisTitle && caseData.diagnosisExplanation && caseData['imagePlaceholder-1'] && caseData['imageAlt-1']) {
+
+                         // *** Update validation check to use the retrieved attributes ***
+                         if (caseData.title && caseData.vignette && caseData.imaging && caseData.diagnosisTitle && caseData.diagnosisExplanation && caseData.imagePlaceholder1 && caseData.imageAlt1) {
                             openModal(caseData);
                          } else {
-                             console.error("Button clicked, but missing essential data attributes:", caseData); // Log the collected data
+                             // Log the button itself and the collected data for debugging
+                             console.error("Button clicked, but missing essential data attributes. Button:", button, "Collected Data:", caseData);
                          }
                     }
                 });
@@ -689,7 +699,7 @@
             if (anatomyFigure && anatomyOverlays.length > 0 && anatomyInfo) {
                 anatomyOverlays.forEach(overlay => {
                     overlay.addEventListener('click', () => {
-                        const info = overlay.dataset.info;
+                        const info = overlay.dataset.info; // dataset is fine here as 'data-info' has no hyphen
                         showAnatomyInfo(info);
                     });
                     overlay.addEventListener('keydown', (event) => {
