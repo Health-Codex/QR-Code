@@ -31,6 +31,7 @@
             margin-left: auto;
             margin-right: auto;
             background-color: #f9fafb; /* Light gray background for images */
+            border-radius: 0.375rem; /* Rounded corners */
         }
 
         /* --- Styles for interactive anatomy overlays --- */
@@ -79,7 +80,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-500 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
                         <h3 class="text-xl font-semibold text-blue-600 mb-2">Comprehensive Guide</h3>
                         <p class="text-gray-600 mb-5 text-sm leading-relaxed flex-grow">Detailed best practices and techniques for various POCUS applications.</p>
-                        <a href="https://www.dropbox.com/scl/fi/u8ncqi1xjl037bjzr94fi/POCUS_Guide.pdf?rlkey=lur4ciw5ycdwxa7igvcmdl1uc&st=q2u9b0hn&dl=1"
+                        <a href="https://raw.githubusercontent.com/Health-Codex/QR-Code/main/POCUS_Guide.pdf"
                            target="_blank"
                            rel="noopener noreferrer"
                            class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out text-base mt-auto focus-visible:outline-white">
@@ -110,73 +111,73 @@
                 <div class="space-y-8">
                     <article class="case bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 p-6 md:p-8 overflow-hidden">
                         <h3 class="text-xl font-semibold text-blue-800 mb-4">Case Study: Acute Shortness of Breath Post-Trauma</h3>
-                        <p class="text-gray-700 mb-4">A 45-year-old male presented with acute shortness of breath after a fall.</p>
+                        <p class="text-gray-700 mb-4">A 45-year-old male presented with acute shortness of breath after a fall from height.</p>
                         <dl class="text-sm space-y-2 mb-5">
                             <div>
                                 <dt class="font-semibold text-gray-800 inline">Clinical Presentation:</dt>
-                                <dd class="inline text-gray-600 ml-1">Sudden dyspnea, pleuritic chest pain, tachypnea, hypoxia, decreased breath sounds on right.</dd>
+                                <dd class="inline text-gray-600 ml-1">Sudden onset dyspnea, sharp right-sided pleuritic chest pain, tachypnea (RR 28), hypoxia (SpO2 90% RA), decreased breath sounds on the right hemithorax.</dd>
                             </div>
                             <div>
                                 <dt class="font-semibold text-gray-800 inline">POCUS Application:</dt>
-                                <dd class="inline text-gray-600 ml-1">Lung Ultrasound.</dd>
+                                <dd class="inline text-gray-600 ml-1">Lung Ultrasound (evaluation for traumatic lung injury).</dd>
                             </div>
                              <div>
                                 <dt class="font-semibold text-gray-800 inline">Key Question:</dt>
-                                <dd class="inline text-gray-600 ml-1">Is there evidence of pneumothorax?</dd>
+                                <dd class="inline text-gray-600 ml-1">How can POCUS rapidly assess for life-threatening causes of acute dyspnea in this trauma patient?</dd>
                             </div>
                         </dl>
                         <button class="read-more-btn bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out focus-visible:outline-white"
                                 data-title="Case Study: Acute Shortness of Breath Post-Trauma"
-                                data-vignette="A 45-year-old male presents to the ED with sudden onset shortness of breath and sharp right-sided chest pain after falling off a ladder. Vitals: RR 28, HR 115, SpO2 90% RA. Exam reveals decreased breath sounds on the right hemithorax."
-                                data-imaging="Bedside lung POCUS is performed using a linear or curvilinear probe. On the right side, pleural sliding is absent. Multiple horizontal reverberation artifacts (A-lines) are seen. M-mode interrogation across the pleural line demonstrates the 'stratosphere' or 'barcode' sign. The left lung shows normal lung sliding ('seashore' sign on M-mode)."
+                                data-vignette="A 45-year-old male presents to the ED with sudden onset shortness of breath and sharp right-sided chest pain after falling approximately 10 feet off a ladder. Vitals: RR 28, HR 115, BP 130/80, SpO2 90% on room air. Exam reveals decreased breath sounds and hyperresonance to percussion on the right hemithorax."
+                                data-imaging="Bedside lung POCUS is performed using a linear probe in the anterior chest zones. On the right side, pleural sliding ('ants marching') is absent. Multiple horizontal reverberation artifacts (A-lines) are seen, indicating air below the probe. M-mode interrogation across the pleural line demonstrates the 'stratosphere' or 'barcode' sign, confirming lack of lung sliding. The 'lung point' sign (junction between sliding and non-sliding lung) is identified laterally. The left lung shows normal lung sliding ('seashore' sign on M-mode)."
                                 data-image-placeholder-1="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Ultrasound_lung_absence_of_lung_sliding.gif/320px-Ultrasound_lung_absence_of_lung_sliding.gif"
                                 data-image-alt-1="POCUS B-mode (GIF) showing absent lung sliding in pneumothorax (Source: Wikimedia Commons, CC BY-SA)"
                                 data-image-placeholder-2="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Stratosphere_sign_ultrasound_pneumothorax_M-mode.jpg/512px-Stratosphere_sign_ultrasound_pneumothorax_M-mode.jpg"
                                 data-image-alt-2="POCUS M-mode showing the 'barcode' or 'stratosphere' sign in pneumothorax (Source: Wikimedia Commons, CC BY-SA)"
                                 data-diagnosis-title="Diagnosis: Pneumothorax"
-                                data-diagnosis-explanation="The absence of lung sliding combined with the barcode sign on M-mode are highly specific findings for pneumothorax. This allows for rapid bedside diagnosis and facilitates timely intervention (e.g., chest tube placement), crucial in a potentially unstable patient.">
+                                data-diagnosis-explanation="Interpretation & Outcome: The POCUS findings (absent lung sliding, A-lines, barcode sign, lung point) are highly specific for pneumothorax. This allows for rapid bedside diagnosis, bypassing the need for potentially delaying chest X-ray in an unstable patient. Urgent needle decompression followed by chest tube placement was performed, leading to improvement in oxygenation and respiratory status.">
                             See Details & Findings
                         </button>
                     </article>
 
                      <article class="case bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 p-6 md:p-8 overflow-hidden">
                         <h3 class="text-xl font-semibold text-blue-800 mb-4">Case Study: Hypotension & Distended Neck Veins</h3>
-                        <p class="text-gray-700 mb-4">A 60-year-old female with a history of malignancy presented with shock.</p>
+                        <p class="text-gray-700 mb-4">A 60-year-old female with a history of malignancy presented with progressive weakness and shock.</p>
                         <dl class="text-sm space-y-2 mb-5">
                              <div>
                                 <dt class="font-semibold text-gray-800 inline">Clinical Presentation:</dt>
-                                <dd class="inline text-gray-600 ml-1">Hypotension, tachycardia, JVD, muffled heart sounds (Beck's triad).</dd>
+                                <dd class="inline text-gray-600 ml-1">Hypotension (BP 85/50), tachycardia (HR 120), marked jugular venous distension (JVD), muffled heart sounds, pulsus paradoxus noted.</dd>
                             </div>
                             <div>
                                 <dt class="font-semibold text-gray-800 inline">POCUS Application:</dt>
-                                <dd class="inline text-gray-600 ml-1">Cardiac Ultrasound (Focused Echo).</dd>
+                                <dd class="inline text-gray-600 ml-1">Focused Cardiac Ultrasound (ECHO) and IVC assessment.</dd>
                             </div>
                              <div>
                                 <dt class="font-semibold text-gray-800 inline">Key Question:</dt>
-                                <dd class="inline text-gray-600 ml-1">Is there pericardial effusion causing tamponade?</dd>
+                                <dd class="inline text-gray-600 ml-1">What are the key POCUS findings to differentiate causes of obstructive shock in this patient?</dd>
                             </div>
                         </dl>
                         <button class="read-more-btn bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out focus-visible:outline-white"
                                 data-title="Case Study: Hypotension & Distended Neck Veins"
-                                data-vignette="A 60-year-old female with metastatic breast cancer presents with weakness, dizziness, and dyspnea. Vitals: BP 85/50, HR 120, RR 22. Exam reveals JVD to the angle of the jaw, distant heart sounds, and cool extremities."
-                                data-imaging="Focused cardiac POCUS (subxiphoid and apical views) reveals a large, circumferential anechoic pericardial effusion (PE). Diastolic collapse of the right ventricle (RV) free wall is clearly visualized. The inferior vena cava (IVC) is dilated (>2.1 cm) with less than 50% collapse on inspiration."
+                                data-vignette="A 60-year-old female with metastatic breast cancer presents with several days of increasing weakness, dizziness, and dyspnea on exertion. Vitals: BP 85/50, HR 120, RR 22. Exam reveals JVD to the angle of the jaw, distant heart sounds, cool extremities, and a significant decrease in systolic blood pressure during inspiration (pulsus paradoxus)."
+                                data-imaging="Focused cardiac POCUS (subxiphoid and apical 4-chamber views) reveals a large, circumferential anechoic (black) space surrounding the heart, consistent with a pericardial effusion (PE). Diastolic collapse of the right ventricle (RV) free wall is clearly visualized, indicating increased intrapericardial pressure exceeding RV diastolic pressure. The right atrium (RA) also shows systolic collapse. Assessment of the inferior vena cava (IVC) reveals a dilated diameter (>2.1 cm) with less than 50% collapse during inspiration (plethoric IVC)."
                                 data-image-placeholder-1="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Subcostal_view_ultrasound_showing_pericardial_effusion_and_right_ventricular_diastolic_collapse.jpg/512px-Subcostal_view_ultrasound_showing_pericardial_effusion_and_right_ventricular_diastolic_collapse.jpg"
                                 data-image-alt-1="POCUS Subcostal view: large pericardial effusion (PE) and RV diastolic collapse (arrow) (Source: Wikimedia Commons, CC BY-SA)"
                                 data-image-placeholder-2="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/IVC_ultrasound_plethora.jpg/512px-IVC_ultrasound_plethora.jpg"
                                 data-image-alt-2="POCUS showing a dilated (plethoric) IVC with minimal respiratory collapse, suggesting high CVP (Source: Wikimedia Commons, CC BY-SA)"
-                                data-diagnosis-title="Diagnosis: Cardiac Tamponade"
-                                data-diagnosis-explanation="The combination of a significant pericardial effusion with echocardiographic signs of right ventricular diastolic collapse and a plethoric, non-collapsing IVC confirms cardiac tamponade physiology. This is a life-threatening emergency requiring immediate pericardiocentesis.">
+                                data-diagnosis-title="Diagnosis: Obstructive Shock due to Cardiac Tamponade"
+                                data-diagnosis-explanation="Interpretation & Outcome: The combination of a significant pericardial effusion with POCUS signs of right-sided chamber collapse (RV diastolic, RA systolic) and a plethoric, non-collapsing IVC confirms cardiac tamponade physiology as the cause of obstructive shock. This is a life-threatening emergency. An urgent pericardiocentesis was performed under ultrasound guidance, removing 500ml of serosanguinous fluid. The patient's hemodynamics improved immediately post-procedure.">
                             See Details & Findings
                         </button>
                     </article>
 
                     <article class="case bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 p-6 md:p-8 overflow-hidden">
                         <h3 class="text-xl font-semibold text-blue-800 mb-4">Case Study: Blunt Abdominal Trauma & Instability</h3>
-                         <p class="text-gray-700 mb-4">A 35-year-old male involved in an MVC presented with hypotension.</p>
+                         <p class="text-gray-700 mb-4">A 35-year-old unrestrained driver involved in a high-speed MVC presented with hypotension.</p>
                          <dl class="text-sm space-y-2 mb-5">
                              <div>
                                 <dt class="font-semibold text-gray-800 inline">Clinical Presentation:</dt>
-                                <dd class="inline text-gray-600 ml-1">Hypotension, tachycardia, abdominal tenderness after high-speed MVC.</dd>
+                                <dd class="inline text-gray-600 ml-1">Hypotension (BP 90/60), tachycardia (HR 130), abdominal tenderness (especially LUQ), mechanism concerning for intra-abdominal injury.</dd>
                              </div>
                             <div>
                                 <dt class="font-semibold text-gray-800 inline">POCUS Application:</dt>
@@ -184,123 +185,123 @@
                             </div>
                              <div>
                                 <dt class="font-semibold text-gray-800 inline">Key Question:</dt>
-                                <dd class="inline text-gray-600 ml-1">Is there evidence of intra-abdominal free fluid (hemoperitoneum)?</dd>
+                                <dd class="inline text-gray-600 ml-1">In this hemodynamically unstable trauma patient, what is the primary goal of the FAST exam?</dd>
                             </div>
                         </dl>
                          <button class="read-more-btn bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out focus-visible:outline-white"
                                 data-title="Case Study: Blunt Abdominal Trauma & Instability"
-                                data-vignette="A 35-year-old male driver is brought in after a high-speed MVC. Complains of LUQ pain. Vitals: BP 90/60, HR 130. Received 1L crystalloid en route with minimal response. Abdomen tender, especially LUQ."
-                                data-imaging="FAST exam performed. Right upper quadrant (RUQ) view shows anechoic fluid (black stripe) in Morison's pouch between the liver and kidney. Left upper quadrant (LUQ) view reveals a larger collection of anechoic fluid in the splenorenal recess. Pelvic view also positive for free fluid."
+                                data-vignette="A 35-year-old male driver is brought in by EMS after a high-speed MVC where he was ejected from the vehicle. He complains of diffuse abdominal pain, worse in the LUQ. Vitals: BP 90/60, HR 130, RR 24. Received 1L crystalloid en route with minimal improvement in BP. Abdomen is tender to palpation diffusely, with guarding noted."
+                                data-imaging="A FAST exam is rapidly performed. The right upper quadrant (RUQ) view (hepatorenal recess / Morison's pouch) shows a clear anechoic (black) stripe representing free fluid between the liver and kidney. The left upper quadrant (LUQ) view (splenorenal recess) reveals a larger collection of anechoic fluid surrounding the spleen. The suprapubic view also demonstrates free fluid posterior to the bladder. The pericardial view is negative for effusion."
                                 data-image-placeholder-1="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Morison%27s_pouch_ultrasound_FAST_free_fluid.jpg/512px-Morison%27s_pouch_ultrasound_FAST_free_fluid.jpg"
                                 data-image-alt-1="POCUS FAST RUQ view: free fluid (anechoic stripe) in Morison's pouch (Source: Wikimedia Commons, CC BY-SA)"
                                 data-image-placeholder-2="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/FAST_exam_splenorenal_view_free_fluid_ultrasound.jpg/512px-FAST_exam_splenorenal_view_free_fluid_ultrasound.jpg"
                                 data-image-alt-2="POCUS FAST LUQ view: free fluid (anechoic area) in the splenorenal recess (Source: Wikimedia Commons, CC BY-SA)"
                                 data-diagnosis-title="Diagnosis: Hemoperitoneum (Positive FAST Exam)"
-                                data-diagnosis-explanation="The presence of anechoic free fluid in dependent areas of the abdomen (Morison's pouch, splenorenal recess, pelvis) in a hemodynamically unstable trauma patient constitutes a positive FAST exam. This strongly indicates hemoperitoneum, necessitating urgent surgical evaluation for likely intra-abdominal hemorrhage.">
+                                data-diagnosis-explanation="Interpretation & Outcome: The primary goal of the FAST exam in unstable trauma is to identify free intraperitoneal fluid, which in this context is presumed to be blood (hemoperitoneum). The presence of anechoic free fluid in multiple dependent areas (Morison's pouch, splenorenal recess, pelvis) constitutes a positive FAST exam. This strongly indicates significant intra-abdominal hemorrhage. Given the patient's hemodynamic instability and positive FAST, he was taken emergently to the operating room for exploratory laparotomy, where a splenic laceration and mesenteric injury were found and repaired.">
                              See Details & Findings
                         </button>
                     </article>
 
                     <article class="case bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 p-6 md:p-8 overflow-hidden">
                         <h3 class="text-xl font-semibold text-blue-800 mb-4">Case Study: Progressive Dyspnea in Cancer Patient</h3>
-                        <p class="text-gray-700 mb-4">A 55-year-old patient with known lung cancer presented with worsening shortness of breath.</p>
+                        <p class="text-gray-700 mb-4">A 55-year-old patient with known metastatic lung cancer presented with worsening shortness of breath over several days.</p>
                         <dl class="text-sm space-y-2 mb-5">
                              <div>
                                 <dt class="font-semibold text-gray-800 inline">Clinical Presentation:</dt>
-                                <dd class="inline text-gray-600 ml-1">Worsening dyspnea, orthopnea, dullness to percussion, decreased breath sounds left base.</dd>
+                                <dd class="inline text-gray-600 ml-1">Progressive dyspnea, orthopnea, non-productive cough. Exam shows dullness to percussion and decreased breath sounds over the left lower lung field.</dd>
                             </div>
                             <div>
                                 <dt class="font-semibold text-gray-800 inline">POCUS Application:</dt>
-                                <dd class="inline text-gray-600 ml-1">Lung Ultrasound.</dd>
+                                <dd class="inline text-gray-600 ml-1">Lung and Pleural Ultrasound.</dd>
                             </div>
                              <div>
                                 <dt class="font-semibold text-gray-800 inline">Key Question:</dt>
-                                <dd class="inline text-gray-600 ml-1">Is there a pleural effusion, and can it be safely drained?</dd>
+                                <dd class="inline text-gray-600 ml-1">How can POCUS characterize the cause of decreased breath sounds and guide potential intervention?</dd>
                             </div>
                         </dl>
                          <button class="read-more-btn bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out focus-visible:outline-white"
                                 data-title="Case Study: Progressive Dyspnea in Cancer Patient"
-                                data-vignette="A 55-year-old patient with known NSCLC presents with several days of worsening dyspnea, worse when lying flat. Exam reveals dullness and diminished breath sounds over the lower half of the left posterior chest."
-                                data-imaging="Lung POCUS over the area of dullness shows a large anechoic space superior to the diaphragm (D). The compressed lower lobe of the lung (L) is seen floating within the fluid ('jellyfish sign'). The spine sign (visualization of vertebral bodies above the diaphragm) is also present due to fluid transmission. Measurement confirms significant fluid depth."
+                                data-vignette="A 55-year-old patient with known stage IV NSCLC presents with several days of worsening dyspnea, now requiring 3 pillows to sleep (orthopnea). No fever or chills. Exam reveals dullness to percussion and markedly diminished breath sounds over the lower half of the left posterior and lateral chest."
+                                data-imaging="Lung POCUS performed over the area of dullness using a curvilinear probe reveals a large anechoic (black) space superior to the diaphragm (D), consistent with a pleural effusion. The compressed (atelectatic) lower lobe of the lung (L) is seen 'flapping' within the fluid ('jellyfish sign'). Visualization of the thoracic vertebral bodies above the diaphragm (positive 'spine sign') further confirms the presence of fluid allowing sound transmission. Measurement estimates the effusion size as large."
                                 data-image-placeholder-1="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Pleural_effusion_ultrasound_with_atelectatic_lung.jpg/512px-Pleural_effusion_ultrasound_with_atelectatic_lung.jpg"
                                 data-image-alt-1="POCUS: large pleural effusion (anechoic) with atelectatic lung (L) above diaphragm (D) - 'jellyfish sign' (Source: Wikimedia Commons, CC BY-SA)"
                                 data-image-placeholder-2="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Spine_sign_ultrasound_pleural_effusion.jpg/512px-Spine_sign_ultrasound_pleural_effusion.jpg"
                                 data-image-alt-2="POCUS: 'spine sign' - vertebral bodies (arrows) visible above diaphragm, indicative of pleural effusion (Source: Wikimedia Commons, CC BY-SA)"
                                 data-diagnosis-title="Diagnosis: Large Malignant Pleural Effusion"
-                                data-diagnosis-explanation="POCUS confirms a large pleural effusion, likely malignant given the history. It accurately assesses size and identifies key landmarks (diaphragm, adjacent organs, fluid depth), allowing for safe POCUS-guided thoracentesis to relieve symptoms and obtain fluid for analysis.">
+                                data-diagnosis-explanation="Interpretation & Outcome: POCUS rapidly confirms a large pleural effusion as the cause of the patient's symptoms and physical exam findings. Given the history, this is highly likely to be a malignant effusion. POCUS accurately assesses the size and location, identifies key landmarks (diaphragm, lung), and allows selection of a safe site for drainage, avoiding injury to underlying structures. A POCUS-guided thoracentesis was performed, removing 1.5L of fluid, resulting in significant improvement in dyspnea. Fluid analysis confirmed malignant cells.">
                              See Details & Findings
                         </button>
                     </article>
 
                     <article class="case bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 p-6 md:p-8 overflow-hidden">
-                        <h3 class="text-xl font-semibold text-blue-800 mb-4">Case Study: Unilateral Leg Swelling</h3>
-                         <p class="text-gray-700 mb-4">A 68-year-old male presented with acute swelling and pain in his left leg.</p>
+                        <h3 class="text-xl font-semibold text-blue-800 mb-4">Case Study: Unilateral Leg Swelling Post-Surgery</h3>
+                         <p class="text-gray-700 mb-4">A 68-year-old male presented with acute swelling and pain in his left leg 1 week after hip replacement.</p>
                          <dl class="text-sm space-y-2 mb-5">
                              <div>
                                 <dt class="font-semibold text-gray-800 inline">Clinical Presentation:</dt>
-                                <dd class="inline text-gray-600 ml-1">Left calf swelling, erythema, tenderness.</dd>
+                                <dd class="inline text-gray-600 ml-1">Left calf swelling (3cm > right), erythema, tenderness along the deep venous system. Recent major orthopedic surgery.</dd>
                             </div>
                             <div>
                                 <dt class="font-semibold text-gray-800 inline">POCUS Application:</dt>
-                                <dd class="inline text-gray-600 ml-1">Lower Extremity Venous Ultrasound (2-Point Compression).</dd>
+                                <dd class="inline text-gray-600 ml-1">Lower Extremity Venous Compression Ultrasound.</dd>
                             </div>
                              <div>
                                 <dt class="font-semibold text-gray-800 inline">Key Question:</dt>
-                                <dd class="inline text-gray-600 ml-1">Is there evidence of DVT in the common femoral or popliteal veins?</dd>
+                                <dd class="inline text-gray-600 ml-1">What specific POCUS maneuver is used to rule out proximal DVT at the bedside?</dd>
                             </div>
                         </dl>
                          <button class="read-more-btn bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out focus-visible:outline-white"
-                                data-title="Case Study: Unilateral Leg Swelling"
-                                data-vignette="A 68-year-old male with a history of recent hip surgery presents with 2 days of progressive left leg swelling, calf pain, and redness. Wells score is intermediate risk for DVT."
-                                data-imaging="A 2-point compression ultrasound is performed using a linear probe. At the common femoral vein (CFV), the vein fails to fully compress with probe pressure (image 1: attempted compression). The adjacent femoral artery (FA) compresses normally. In the popliteal fossa, the popliteal vein (PV) also fails to fully compress (image 2)."
+                                data-title="Case Study: Unilateral Leg Swelling Post-Surgery"
+                                data-vignette="A 68-year-old male, 1 week post-total hip arthroplasty, presents with 2 days of progressive left leg swelling, calf pain, and redness. Exam reveals pitting edema and calf circumference 3 cm greater than the asymptomatic right leg. Tenderness is noted on deep palpation of the calf. Wells score is calculated as intermediate risk for DVT."
+                                data-imaging="A 2-point compression ultrasound is performed using a high-frequency linear probe. At the common femoral vein (CFV) in the groin crease, the vein (V) fails to fully collapse with adequate probe pressure, while the adjacent femoral artery (A) remains patent (Image 1). In the popliteal fossa behind the knee, the popliteal vein (PV) also demonstrates incomplete compressibility with echogenic material noted within the lumen (Image 2)."
                                 data-image-placeholder-1="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/DVT_ultrasound_non-compressible_common_femoral_vein.jpg/512px-DVT_ultrasound_non-compressible_common_femoral_vein.jpg"
                                 data-image-alt-1="POCUS DVT Scan: Non-compressible common femoral vein (V) next to compressible femoral artery (A) (Source: Wikimedia Commons, CC BY-SA)"
                                 data-image-placeholder-2="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Popliteal_vein_thrombosis_ultrasound_non-compressible.jpg/512px-Popliteal_vein_thrombosis_ultrasound_non-compressible.jpg"
                                 data-image-alt-2="POCUS DVT Scan: Non-compressible popliteal vein (PV) during compression maneuver (Source: Wikimedia Commons, CC BY-SA)"
                                 data-diagnosis-title="Diagnosis: Deep Vein Thrombosis (DVT)"
-                                data-diagnosis-explanation="Failure of the common femoral vein and/or popliteal vein to fully compress with adequate probe pressure is the primary diagnostic criterion for DVT using the simplified 2-point compression technique. This positive finding warrants anticoagulation therapy.">
+                                data-diagnosis-explanation="Interpretation & Outcome: Failure of the common femoral vein and/or popliteal vein to fully compress with adequate probe pressure is the primary diagnostic criterion for DVT using the simplified 2- or 3-point compression technique. Non-compressibility indicates the presence of thrombus within the vein. This positive POCUS finding allows for rapid initiation of anticoagulation therapy, reducing the risk of pulmonary embolism. The patient was started on therapeutic anticoagulation.">
                              See Details & Findings
                         </button>
                     </article>
 
                     <article class="case bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 p-6 md:p-8 overflow-hidden">
-                        <h3 class="text-xl font-semibold text-blue-800 mb-4">Case Study: Right Upper Quadrant Pain</h3>
-                        <p class="text-gray-700 mb-4">A 42-year-old female presented with severe RUQ pain, nausea, and fever.</p>
+                        <h3 class="text-xl font-semibold text-blue-800 mb-4">Case Study: Right Upper Quadrant Pain and Fever</h3>
+                        <p class="text-gray-700 mb-4">A 42-year-old female presented with severe RUQ pain, nausea, and fever after eating a fatty meal.</p>
                         <dl class="text-sm space-y-2 mb-5">
                             <div>
                                 <dt class="font-semibold text-gray-800 inline">Clinical Presentation:</dt>
-                                <dd class="inline text-gray-600 ml-1">RUQ pain radiating to shoulder, nausea, vomiting, fever, positive Murphy's sign.</dd>
+                                <dd class="inline text-gray-600 ml-1">Severe, constant RUQ pain radiating to the right shoulder, nausea, vomiting, fever (38.5°C), positive Murphy's sign on exam.</dd>
                             </div>
                             <div>
                                 <dt class="font-semibold text-gray-800 inline">POCUS Application:</dt>
-                                <dd class="inline text-gray-600 ml-1">RUQ / Gallbladder Ultrasound.</dd>
+                                <dd class="inline text-gray-600 ml-1">RUQ / Hepatobiliary Ultrasound.</dd>
                             </div>
                              <div>
                                 <dt class="font-semibold text-gray-800 inline">Key Question:</dt>
-                                <dd class="inline text-gray-600 ml-1">Are there signs of acute cholecystitis?</dd>
+                                <dd class="inline text-gray-600 ml-1">What are the key sonographic signs used to diagnose acute cholecystitis with POCUS?</dd>
                             </div>
                         </dl>
                         <button class="read-more-btn bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out focus-visible:outline-white"
-                                data-title="Case Study: Right Upper Quadrant Pain"
-                                data-vignette="A 42-year-old female presents with 12 hours of constant, severe RUQ abdominal pain, nausea, and subjective fever. The pain started after eating a fatty meal. Exam reveals tenderness in the RUQ with inspiratory arrest during palpation (positive Murphy's sign)."
-                                data-imaging="Bedside RUQ POCUS shows gallstones (hyperechoic foci with posterior acoustic shadowing). The gallbladder wall is thickened (>3 mm). Pericholecystic fluid (anechoic rim) is noted. A sonographic Murphy's sign is elicited."
+                                data-title="Case Study: Right Upper Quadrant Pain and Fever"
+                                data-vignette="A 42-year-old female presents with 12 hours of constant, severe RUQ abdominal pain, accompanied by nausea, two episodes of vomiting, and subjective fever. The pain started shortly after eating fried chicken. Exam reveals marked tenderness in the RUQ with inspiratory arrest during palpation (positive Murphy's sign). Temp 38.5°C, HR 105."
+                                data-imaging="Bedside RUQ POCUS performed with a curvilinear probe identifies multiple hyperechoic foci within the gallbladder lumen casting distinct posterior acoustic shadows, consistent with gallstones (cholelithiasis). The anterior gallbladder wall measures 5 mm (thickened, normal < 3-4 mm). A thin rim of anechoic fluid is noted surrounding the gallbladder (pericholecystic fluid). Maximal tenderness is elicited when the probe is directly over the gallbladder (sonographic Murphy's sign)."
                                 data-image-placeholder-1="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Gallstones_ultrasound_cholelithiasis.jpg/512px-Gallstones_ultrasound_cholelithiasis.jpg"
                                 data-image-alt-1="POCUS Gallbladder: Multiple gallstones (bright spots) with posterior acoustic shadowing (dark streaks) (Source: Wikimedia Commons, CC BY-SA)"
                                 data-image-placeholder-2="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Acute_cholecystitis_ultrasound_thickened_wall_pericholecystic_fluid.jpg/512px-Acute_cholecystitis_ultrasound_thickened_wall_pericholecystic_fluid.jpg"
                                 data-image-alt-2="POCUS Gallbladder: Thickened wall (calipers) and pericholecystic fluid (arrow) in acute cholecystitis (Source: Wikimedia Commons, CC BY-SA)"
                                 data-diagnosis-title="Diagnosis: Acute Cholecystitis"
-                                data-diagnosis-explanation="The combination of gallstones, gallbladder wall thickening, pericholecystic fluid, and a sonographic Murphy's sign on POCUS are highly suggestive of acute cholecystitis. These findings expedite diagnosis and appropriate management (e.g., surgical consultation, antibiotics).">
+                                data-diagnosis-explanation="Interpretation & Outcome: The combination of gallstones plus secondary signs of inflammation (gallbladder wall thickening >3-4 mm, pericholecystic fluid, sonographic Murphy's sign) on POCUS are highly suggestive of acute cholecystitis. These findings, correlating with the clinical presentation, expedite diagnosis and management. The patient was admitted, started on IV antibiotics, and underwent laparoscopic cholecystectomy within 24 hours.">
                             See Details & Findings
                         </button>
                     </article>
 
                     <article class="case bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 p-6 md:p-8 overflow-hidden">
-                        <h3 class="text-xl font-semibold text-blue-800 mb-4">Case Study: Elderly Male with Back Pain & Hypotension</h3>
-                        <p class="text-gray-700 mb-4">A 75-year-old male with hypertension presented with sudden onset back pain and syncope.</p>
+                        <h3 class="text-xl font-semibold text-blue-800 mb-4">Case Study: Elderly Male with Back Pain & Syncope</h3>
+                        <p class="text-gray-700 mb-4">A 75-year-old male with known hypertension presented with sudden onset severe back pain and syncope.</p>
                         <dl class="text-sm space-y-2 mb-5">
                              <div>
                                 <dt class="font-semibold text-gray-800 inline">Clinical Presentation:</dt>
-                                <dd class="inline text-gray-600 ml-1">Sudden severe back/abdominal pain, syncope, hypotension, pulsatile abdominal mass (sometimes).</dd>
+                                <dd class="inline text-gray-600 ml-1">Sudden severe tearing back/abdominal pain, syncope, hypotension (BP 80/50), tachycardia (HR 110), pale and diaphoretic.</dd>
                             </div>
                             <div>
                                 <dt class="font-semibold text-gray-800 inline">POCUS Application:</dt>
@@ -308,19 +309,19 @@
                             </div>
                              <div>
                                 <dt class="font-semibold text-gray-800 inline">Key Question:</dt>
-                                <dd class="inline text-gray-600 ml-1">Is there an abdominal aortic aneurysm (AAA)?</dd>
+                                <dd class="inline text-gray-600 ml-1">How can POCUS be used to rapidly assess for a catastrophic vascular emergency in this hypotensive patient with back pain?</dd>
                             </div>
                         </dl>
                         <button class="read-more-btn bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out focus-visible:outline-white"
-                                data-title="Case Study: Back Pain & Hypotension"
-                                data-vignette="A 75-year-old male with a history of HTN and smoking presents via EMS after syncope preceded by sudden, tearing back pain radiating to the abdomen. Vitals: BP 80/50, HR 110. Patient is pale and diaphoretic."
-                                data-imaging="Emergency bedside POCUS of the abdominal aorta is performed using a curvilinear probe. Transverse view shows maximal outer-to-outer diameter measuring 6.5 cm (normal < 3 cm). Longitudinal view confirms the aneurysm and shows mural thrombus (MT) lining the dilated aorta."
+                                data-title="Case Study: Back Pain & Syncope"
+                                data-vignette="A 75-year-old male with a history of HTN and smoking presents via EMS after syncope. Prior to losing consciousness, he experienced sudden, severe 'tearing' back pain radiating to his abdomen. Vitals: BP 80/50, HR 110, RR 20. Patient is pale, cool, and diaphoretic. Abdomen is soft but diffusely tender; no clear pulsatile mass felt."
+                                data-imaging="Emergency bedside POCUS of the abdominal aorta is performed using a low-frequency curvilinear probe. Transverse views obtained from the epigastrium down to the bifurcation reveal a significantly dilated aorta, measuring 6.5 cm maximal outer wall to outer wall diameter (normal < 3 cm). Mural thrombus (MT) is noted lining the aneurysmal sac. Longitudinal views confirm the fusiform aneurysm."
                                 data-image-placeholder-1="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/AAA_ultrasound_transverse_measurement.jpg/512px-AAA_ultrasound_transverse_measurement.jpg"
                                 data-image-alt-1="POCUS AAA Transverse view: Measurement of dilated aorta outer-to-outer diameter (Source: Wikimedia Commons, CC BY-SA)"
                                 data-image-placeholder-2="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/AAA_ultrasound_longitudinal_with_mural_thrombus.jpg/512px-AAA_ultrasound_longitudinal_with_mural_thrombus.jpg"
                                 data-image-alt-2="POCUS AAA Longitudinal view: Dilated aorta with mural thrombus (MT) visible (Source: Wikimedia Commons, CC BY-SA)"
-                                data-diagnosis-title="Diagnosis: Abdominal Aortic Aneurysm (AAA) - Likely Ruptured"
-                                data-diagnosis-explanation="Identification of an AAA (aortic diameter > 3 cm) via POCUS in a patient presenting with symptoms concerning for rupture (pain, hypotension, syncope) is a critical finding. While POCUS may not directly visualize rupture, detecting the AAA itself in this clinical context mandates immediate vascular surgery consultation and preparation for emergent repair.">
+                                data-diagnosis-title="Diagnosis: Abdominal Aortic Aneurysm (AAA) - High Suspicion for Rupture"
+                                data-diagnosis-explanation="Interpretation & Outcome: Identification of a large AAA (aortic diameter > 3 cm, especially > 5.5 cm) via POCUS in a patient presenting with symptoms concerning for rupture (acute pain, hypotension, syncope) is a critical, time-sensitive finding. While POCUS may not directly visualize retroperitoneal hematoma (rupture), detecting the AAA itself in this clinical context is sufficient to presume rupture until proven otherwise. Immediate vascular surgery consultation was obtained, massive transfusion protocol was initiated, and the patient was taken directly to the OR for emergent open AAA repair.">
                             See Details & Findings
                         </button>
                     </article>
@@ -335,13 +336,13 @@
                          id="anatomy-diagram-img"
                          class="w-full h-auto rounded-lg shadow-md block border border-gray-300 bg-white">
 
-                    <div id="anatomy-region-cardiac" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Cardiac Area (Heart)" data-info="Cardiac: Assess global function, pericardial effusion, RV size/strain. Key views: Parasternal Long/Short Axis, Apical 4-Chamber, Subxiphoid."></div>
-                    <div id="anatomy-region-lungs" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Lung Areas (Chest)" data-info="Lungs: Evaluate for pneumothorax (sliding), B-lines (edema/interstitial syndrome), consolidation, pleural effusion. Scan multiple anterior/lateral zones."></div>
-                    <div id="anatomy-region-ruq" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Right Upper Quadrant (RUQ - Liver, Gallbladder)" data-info="RUQ: Assess gallbladder (stones, wall thickening, CBD), liver, Morison's pouch (FAST), right kidney, right pleural space."></div>
-                    <div id="anatomy-region-luq" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Left Upper Quadrant (LUQ - Spleen, Stomach)" data-info="LUQ: Assess spleen, splenorenal recess (FAST), left kidney, left pleural space."></div>
-                    <div id="anatomy-region-pelvis" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Pelvic Area (Bladder)" data-info="Pelvis: Assess for free fluid (FAST - suprapubic view), bladder volume. Transverse and sagittal views."></div>
-                    <div id="anatomy-region-vascular-neck" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Neck Vascular (IJV)" data-info="Neck Vascular: Assess internal jugular vein (IJV) for central line placement guidance, carotid artery evaluation (less common in POCUS)."></div>
-                    <div id="anatomy-region-vascular-leg" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Leg Vascular (Femoral)" data-info="Leg Vascular: Assess common femoral and popliteal veins for compressibility (DVT protocol)."></div>
+                    <div id="anatomy-region-cardiac" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Cardiac Area (Heart)" data-info="Cardiac: Assess global function (LV/RV squeeze), pericardial effusion/tamponade, severe RV strain (PE), gross valvular dysfunction, volume status (IVC). Key views: Parasternal Long/Short Axis, Apical 4-Chamber, Subxiphoid."></div>
+                    <div id="anatomy-region-lungs" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Lung Areas (Chest)" data-info="Lungs: Evaluate for pneumothorax (sliding, lung point), B-lines (pulmonary edema, interstitial syndromes), consolidation (pneumonia), pleural effusion. Scan multiple anterior/lateral/posterior zones."></div>
+                    <div id="anatomy-region-ruq" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Right Upper Quadrant (RUQ - Liver, Gallbladder)" data-info="RUQ: Assess gallbladder (stones, wall thickening, CBD dilation, sonographic Murphy's), liver parenchyma, Morison's pouch (FAST free fluid), right kidney (hydronephrosis), right pleural space (effusion)."></div>
+                    <div id="anatomy-region-luq" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Left Upper Quadrant (LUQ - Spleen, Stomach)" data-info="LUQ: Assess spleen, splenorenal recess (FAST free fluid), left kidney (hydronephrosis), left pleural space (effusion), stomach (distension - less common POCUS)."></div>
+                    <div id="anatomy-region-pelvis" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Pelvic Area (Bladder)" data-info="Pelvis: Assess for free fluid (FAST - suprapubic view, pouch of Douglas), bladder volume/catheter placement. In OB/Gyn: early pregnancy assessment, ectopic pregnancy screening."></div>
+                    <div id="anatomy-region-vascular-neck" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Neck Vascular (IJV)" data-info="Neck Vascular: Assess internal jugular vein (IJV) patency, size, and relationship to carotid artery for central venous catheter placement guidance."></div>
+                    <div id="anatomy-region-vascular-leg" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Leg Vascular (Femoral)" data-info="Leg Vascular: Assess common femoral vein (CFV) and popliteal vein (PV) compressibility for proximal Deep Vein Thrombosis (DVT) screening (2-point or 3-point compression technique)."></div>
 
                     <figcaption id="anatomy-info" class="mt-5 text-base text-gray-700 min-h-[4.5em] leading-relaxed bg-gray-50 p-4 rounded-md border border-gray-200 shadow-inner">
                         Explore POCUS applications: Click or focus on a highlighted region above and press Enter/Space. (Overlay positions may need adjustment).
@@ -376,7 +377,7 @@
                 </div>
             </div> <div id="reveal-button-container" class="text-center mb-6 pt-4 border-t border-gray-200">
                  <button id="modal-reveal-button" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out text-lg focus-visible:outline-white">
-                     Reveal Diagnosis
+                     Reveal Diagnosis & Interpretation
                  </button>
             </div>
 
@@ -394,10 +395,6 @@
     </div>
 
     <script>
-        // All JavaScript remains the same as the previous version.
-        // It correctly handles fetching data attributes (now including actual image URLs)
-        // and populating the modal, including the image display and error handling.
-        // It also handles the anatomy overlay interactions and focus management.
         document.addEventListener('DOMContentLoaded', () => {
             // --- DOM Element Selection ---
             const modal = document.getElementById('modal');
@@ -436,13 +433,12 @@
                     console.error("Modal elements missing from the DOM.");
                     return;
                 }
-                 // Basic check for essential data properties
-                 if (!data.title || !data.vignette || !data.imaging || !data.diagnosisTitle || !data.diagnosisExplanation) {
-                     console.error("Incomplete case data provided:", data);
-                     // Optionally show an error message to the user here
+                 // Basic check for essential data properties including images
+                 // *** FIX: Use bracket notation for validation check ***
+                 if (!data.title || !data.vignette || !data.imaging || !data.diagnosisTitle || !data.diagnosisExplanation || !data['imagePlaceholder-1'] || !data['imageAlt-1']) {
+                     console.error("Incomplete case data provided (missing title, vignette, imaging, diagnosis, or image1):", data);
                      return;
                  }
-
 
                 // Store data and reference to the button that opened the modal
                 currentCaseData = data;
@@ -454,16 +450,16 @@
                 modalImagingText.textContent = data.imaging;
 
                 // Clear previous images and add new ones
-                modalImageContainer.innerHTML = '';
-                // Use the actual image URLs from the data attributes now
-                if (data.imagePlaceholder1 && data.imageAlt1) {
-                    addImageToModal(data.imagePlaceholder1, data.imageAlt1);
+                modalImageContainer.innerHTML = ''; // Clear previous images
+                // Add first image (required) using bracket notation
+                addImageToModal(data['imagePlaceholder-1'], data['imageAlt-1']);
+                // Add second image if it exists using bracket notation
+                if (data['imagePlaceholder-2'] && data['imageAlt-2']) {
+                    addImageToModal(data['imagePlaceholder-2'], data['imageAlt-2']);
                 }
-                if (data.imagePlaceholder2 && data.imageAlt2) {
-                    addImageToModal(data.imagePlaceholder2, data.imageAlt2);
-                }
-                 // Adjust grid layout based on number of images
-                 modalImageContainer.className = `grid gap-4 mt-4 ${data.imagePlaceholder1 && data.imagePlaceholder2 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'}`;
+                 // Adjust grid layout based on number of images successfully added
+                 const imageCount = modalImageContainer.children.length;
+                 modalImageContainer.className = `grid gap-4 mt-4 ${imageCount > 1 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'}`;
 
 
                 // Reset state: Hide diagnosis, show reveal button
@@ -475,35 +471,44 @@
                 // Show Modal with transitions
                 modal.setAttribute('aria-hidden', 'false');
                 modal.classList.remove('opacity-0');
-                modalContentBox.scrollTop = 0; // Scroll to top
+                // Ensure content box is visible before scrolling
+                requestAnimationFrame(() => {
+                    modalContentBox.scrollTop = 0; // Scroll to top
+                    modalContentBox.classList.remove('opacity-0', 'scale-95'); // Ensure visible if previously hidden
+                });
 
-                // Set focus to the close icon button
-                closeModalIcon.focus();
+
+                // Set focus to the close icon button after a short delay to allow rendering
+                 setTimeout(() => closeModalIcon.focus(), 50);
+
 
                 // Add event listeners for modal interaction
                 addModalEventListeners();
             }
 
             /**
-             * Adds an image element to the modal image container.
+             * Adds an image element to the modal image container. Includes error handling.
              * @param {string} src - Image source URL.
              * @param {string} alt - Image alt text.
              */
              function addImageToModal(src, alt) {
+                // Add console log before setting src
+                console.log(`Attempting to load image: ${src}`);
                 const img = document.createElement('img');
                 img.src = src;
                 img.alt = alt;
-                // Added loading='lazy' for potential performance benefit
-                img.loading = 'lazy';
-                img.className = 'w-full h-auto rounded shadow object-contain mx-auto border border-gray-200 bg-gray-50'; // Ensure consistent styling & add bg
-                // Basic error handling: replace with a placeholder if image fails to load
+                img.loading = 'lazy'; // Defer loading off-screen images
+                img.className = 'w-full h-auto rounded shadow object-contain mx-auto border border-gray-200 bg-gray-50'; // Style the image
+
+                // Error handling for broken image links
                 img.onerror = () => {
-                    console.warn(`Failed to load image: ${src}`);
-                    // More descriptive error placeholder
-                    img.src = `https://placehold.co/400x300/fecaca/991b1b?text=Image+Not+Found`; // Red error placeholder
-                    img.alt = 'Error: Image not found - ' + alt; // Update alt text on error
+                    // Add console log inside onerror
+                    console.error(`ERROR loading image: ${src}. Displaying fallback.`);
+                    // *** UPDATE: Refined fallback text in alt attribute ***
+                    img.src = `https://placehold.co/400x300/fecaca/991b1b?text=External+Image+Load+Failed`; // Display error placeholder
+                    img.alt = 'Error: Failed to load external image - ' + alt; // Update alt text
                 };
-                modalImageContainer.appendChild(img);
+                modalImageContainer.appendChild(img); // Add the image to the container
             }
 
 
@@ -512,7 +517,10 @@
              */
             function revealDiagnosis() {
                  // Ensure elements and data exist
-                if (!diagnosisSection || !modalDiagnosisTitle || !modalDiagnosisExplanation || !revealButtonContainer || !currentCaseData.diagnosisTitle) return;
+                if (!diagnosisSection || !modalDiagnosisTitle || !modalDiagnosisExplanation || !revealButtonContainer || !currentCaseData.diagnosisTitle) {
+                    console.error("Cannot reveal diagnosis - missing elements or data.");
+                    return;
+                }
 
                 // Populate and show diagnosis
                 modalDiagnosisTitle.textContent = currentCaseData.diagnosisTitle;
@@ -535,6 +543,9 @@
                 // Hide modal with transition
                 modal.classList.add('opacity-0');
                 modal.setAttribute('aria-hidden', 'true');
+                 // Reset transform/opacity on content box for next open
+                 modalContentBox.classList.add('opacity-0', 'scale-95');
+
 
                 // Clean up state
                 currentCaseData = {};
@@ -544,7 +555,10 @@
 
                 // Return focus to the element that opened the modal
                 if (previouslyFocusedElement) {
-                    previouslyFocusedElement.focus();
+                    // Check if the element still exists and is focusable
+                    if (document.body.contains(previouslyFocusedElement) && typeof previouslyFocusedElement.focus === 'function') {
+                         previouslyFocusedElement.focus();
+                    }
                     previouslyFocusedElement = null; // Clear reference
                 }
             }
@@ -554,7 +568,6 @@
              */
             function addModalEventListeners() {
                 modal.addEventListener('keydown', handleModalKeydown);
-                // Close modal if background overlay is clicked
                 modal.addEventListener('click', handleModalBackgroundClick);
                 closeModalIcon.addEventListener('click', closeModal);
                 closeModalButton.addEventListener('click', closeModal);
@@ -580,8 +593,7 @@
                 if (event.key === 'Escape') {
                     closeModal();
                 } else if (event.key === 'Tab') {
-                    // Pass the modal content box as the container for focus trapping
-                    trapFocus(modalContentBox, event);
+                    trapFocus(modalContentBox, event); // Pass the modal content box
                 }
             }
 
@@ -590,7 +602,7 @@
              * @param {MouseEvent} event
              */
             function handleModalBackgroundClick(event) {
-                // Check if the click target is the modal background itself, not its content
+                // Check if the click target is the modal background itself
                 if (event.target === modal) {
                     closeModal();
                 }
@@ -602,56 +614,58 @@
              * @param {KeyboardEvent} event - The Tab keydown event.
              */
             function trapFocus(containerElement, event) {
-                // Find all focusable elements within the container that are currently visible
                 const focusableElements = Array.from(
                     containerElement.querySelectorAll(
                         'button, [href], input:not([type="hidden"]), select, textarea, [tabindex]:not([tabindex="-1"])'
                     )
-                ).filter(el => !el.closest('.hidden') && el.offsetParent !== null && getComputedStyle(el).visibility !== 'hidden'); // Check if element is visible and not hidden by CSS
+                ).filter(el => !el.closest('.hidden') && el.offsetParent !== null && getComputedStyle(el).visibility !== 'hidden' && !el.disabled);
 
-                if (focusableElements.length === 0) return; // No focusable elements found
+                if (focusableElements.length === 0) {
+                    event.preventDefault(); // Prevent tabbing out if nothing is focusable
+                    return;
+                }
 
                 const firstElement = focusableElements[0];
                 const lastElement = focusableElements[focusableElements.length - 1];
                 const currentActive = document.activeElement;
 
                 if (event.shiftKey) { // Tab + Shift
-                    // If focus is on the first element or outside the modal, wrap to the last
                     if (currentActive === firstElement || !containerElement.contains(currentActive)) {
                         lastElement.focus();
                         event.preventDefault();
                     }
                 } else { // Tab
-                     // If focus is on the last element or outside the modal, wrap to the first
                     if (currentActive === lastElement || !containerElement.contains(currentActive)) {
                         firstElement.focus();
                         event.preventDefault();
                     }
                 }
-                // Allow default tab behavior if not on the first/last element and inside the container
             }
 
 
             // --- Event Delegation for Case Study Buttons ---
             if (mainContent) {
                 mainContent.addEventListener('click', (event) => {
-                    // Find the closest ancestor button with the 'read-more-btn' class
                     const button = event.target.closest('.read-more-btn');
-                    if (button && button.dataset) { // Check if it's the button and has dataset
-                         // Extract data from data-* attributes
-                         // Renamed image placeholders to reflect they now hold actual URLs
+                    if (button && button.dataset) {
+                         // *** FIX: Use bracket notation to access hyphenated data attributes ***
                          const caseData = {
                             title: button.dataset.title,
                             vignette: button.dataset.vignette,
                             imaging: button.dataset.imaging,
                             diagnosisTitle: button.dataset.diagnosisTitle,
                             diagnosisExplanation: button.dataset.diagnosisExplanation,
-                            imagePlaceholder1: button.dataset.imagePlaceholder1, // Now holds actual URL 1
-                            imageAlt1: button.dataset.imageAlt1,
-                            imagePlaceholder2: button.dataset.imagePlaceholder2, // Now holds actual URL 2
-                            imageAlt2: button.dataset.imageAlt2
+                            'imagePlaceholder-1': button.dataset['imagePlaceholder-1'], // Correct access
+                            'imageAlt-1': button.dataset['imageAlt-1'],             // Correct access
+                            'imagePlaceholder-2': button.dataset['imagePlaceholder-2'], // Correct access
+                            'imageAlt-2': button.dataset['imageAlt-2']              // Correct access
                          };
-                         openModal(caseData); // Pass the extracted data
+                         // *** FIX: Update validation check to use bracket notation ***
+                         if (caseData.title && caseData.vignette && caseData.imaging && caseData.diagnosisTitle && caseData.diagnosisExplanation && caseData['imagePlaceholder-1'] && caseData['imageAlt-1']) {
+                            openModal(caseData);
+                         } else {
+                             console.error("Button clicked, but missing essential data attributes:", caseData); // Log the collected data
+                         }
                     }
                 });
             } else {
@@ -674,44 +688,32 @@
             // Setup listeners for anatomy overlays if they exist
             if (anatomyFigure && anatomyOverlays.length > 0 && anatomyInfo) {
                 anatomyOverlays.forEach(overlay => {
-                    // Show info on click
                     overlay.addEventListener('click', () => {
                         const info = overlay.dataset.info;
                         showAnatomyInfo(info);
                     });
-
-                    // Show info on Enter/Space key press when focused
                     overlay.addEventListener('keydown', (event) => {
                         if (event.key === 'Enter' || event.key === ' ') {
-                            event.preventDefault(); // Prevent page scroll on Space
+                            event.preventDefault();
                             const info = overlay.dataset.info;
                             showAnatomyInfo(info);
                         }
                     });
-
-                    // Optionally reset text when focus moves away from the overlays entirely
                     overlay.addEventListener('blur', () => {
-                        // Use setTimeout to allow focus to shift to another overlay first
                         setTimeout(() => {
-                             // Check if the newly focused element is NOT one of the overlays
                              const activeElementIsOverlay = document.activeElement && document.activeElement.classList.contains('anatomy-overlay');
                              if (!anatomyFigure.contains(document.activeElement) || !activeElementIsOverlay) {
-                                 showAnatomyInfo(defaultAnatomyText); // Reset if focus left the group
+                                 showAnatomyInfo(defaultAnatomyText);
                              }
-                        }, 0); // Small delay
+                        }, 0);
                     });
                 });
-
-                 // Reset info if clicking outside the overlays but within the figure (e.g., on the image itself)
                  anatomyFigure.addEventListener('click', (event) => {
-                    // Check if the click was directly on the figure or the image, not an overlay
                     if (!event.target.classList.contains('anatomy-overlay')) {
                         showAnatomyInfo(defaultAnatomyText);
                     }
                  });
-
             } else if (anatomyInfo) {
-                // Fallback if overlays aren't set up correctly - display generic message
                 anatomyInfo.textContent = "Interactive anatomy diagram component not fully loaded.";
                 console.warn("Anatomy overlays or figure container not found.");
             }
@@ -721,6 +723,3 @@
 
 </body>
 </html>
-```
-
-I've updated the `href` for the "Download PDF" button to use the Dropbox link with `dl=1`. Clicking it should now initiate the download direct
