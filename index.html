@@ -31,8 +31,15 @@
         }
 
         header p {
-            font-size: 1.3em;
+            font-size: 1.5em;
             margin: 15px 0 0;
+        }
+
+        header small {
+            font-size: 1.2em;
+            display: block;
+            margin-top: 10px;
+            color: #f0f0f0;
         }
 
         main {
@@ -116,12 +123,23 @@
         }
 
         .case p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .case ul {
+            margin-top: 10px;
+            padding-left: 20px;
             font-size: 1em;
             color: #555;
-            margin-bottom: 10px;
+        }
+
+        .case ul li {
+            margin-bottom: 5px;
         }
 
         .case button {
+            margin-top: 15px;
             background: linear-gradient(135deg, #4a90e2, #3a78c2);
             color: #fff;
             border: none;
@@ -217,7 +235,8 @@
 <body>
     <header>
         <h1>POCUS Resources</h1>
-        <p>Explore case studies and interactive anatomy to enhance your knowledge!</p>
+        <p>Empowering you with Point-of-Care Ultrasound knowledge and tools.</p>
+        <small>"Enhance diagnostic accuracy and improve patient care with POCUS."</small>
     </header>
     <main>
         <!-- POCUS Resources Section -->
@@ -241,26 +260,46 @@
 
         <!-- Case Studies Section -->
         <section class="case-studies">
-            <h2>POCUS Case Studies</h2>
+            <h2>Educational Case Studies</h2>
             <div class="case">
                 <h3>Case Study: Diagnosing Pneumothorax</h3>
-                <p>A 45-year-old male presented with acute shortness of breath...</p>
-                <button onclick="openModal('Diagnosing Pneumothorax', 'POCUS was used to detect pneumothorax, aiding in rapid intervention.')">Read More</button>
+                <p>A 45-year-old male presented with acute shortness of breath and a history of recent trauma.</p>
+                <ul>
+                    <li><strong>Clinical Presentation:</strong> Sudden onset of dyspnea, decreased breath sounds on one side.</li>
+                    <li><strong>POCUS Findings:</strong> Absence of lung sliding and presence of the "barcode sign" on M-mode.</li>
+                    <li><strong>Outcome:</strong> Timely chest tube insertion resolved symptoms and prevented further complications.</li>
+                </ul>
+                <button onclick="openModal('Diagnosing Pneumothorax', 'This case highlights the utility of POCUS in detecting pneumothorax quickly, allowing for immediate intervention.')">Read More</button>
             </div>
             <div class="case">
                 <h3>Case Study: Cardiac Tamponade</h3>
-                <p>A 60-year-old female with a history of hypertension...</p>
-                <button onclick="openModal('Cardiac Tamponade', 'POCUS identified cardiac tamponade, prompting life-saving treatment.')">Read More</button>
+                <p>A 60-year-old female with a history of hypertension presented with hypotension and jugular venous distension.</p>
+                <ul>
+                    <li><strong>Clinical Presentation:</strong> Beck's triad - hypotension, muffled heart sounds, and distended neck veins.</li>
+                    <li><strong>POCUS Findings:</strong> Pericardial effusion with diastolic collapse of the right atrium.</li>
+                    <li><strong>Outcome:</strong> Emergency pericardiocentesis was performed, stabilizing the patient.</li>
+                </ul>
+                <button onclick="openModal('Cardiac Tamponade', 'POCUS played a critical role in identifying cardiac tamponade and guiding life-saving treatment.')">Read More</button>
             </div>
             <div class="case">
                 <h3>Case Study: Abdominal Free Fluid</h3>
-                <p>A 35-year-old male suffered blunt abdominal trauma...</p>
-                <button onclick="openModal('Abdominal Free Fluid', 'POCUS detected free fluid, enabling timely surgical intervention.')">Read More</button>
+                <p>A 35-year-old male involved in a motor vehicle accident presented with flank pain and hypotension.</p>
+                <ul>
+                    <li><strong>Clinical Presentation:</strong> Hemodynamic instability and abdominal tenderness.</li>
+                    <li><strong>POCUS Findings:</strong> Free fluid in the hepatorenal pouch (Morison's pouch).</li>
+                    <li><strong>Outcome:</strong> Emergency laparotomy revealed splenic rupture, which was repaired surgically.</li>
+                </ul>
+                <button onclick="openModal('Abdominal Free Fluid', 'This case underscores the importance of POCUS in trauma settings to rapidly identify internal bleeding.')">Read More</button>
             </div>
             <div class="case">
                 <h3>Case Study: Pleural Effusion</h3>
-                <p>A 55-year-old patient reported persistent chest pain...</p>
-                <button onclick="openModal('Pleural Effusion', 'POCUS visualized pleural effusion, guiding thoracentesis safely.')">Read More</button>
+                <p>A 55-year-old patient with a history of lung cancer presented with progressive dyspnea.</p>
+                <ul>
+                    <li><strong>Clinical Presentation:</strong> Dullness to percussion and decreased breath sounds over the lower lung zones.</li>
+                    <li><strong>POCUS Findings:</strong> Anechoic fluid collection in the pleural space with lung compression.</li>
+                    <li><strong>Outcome:</strong> Thoracentesis was safely performed, significantly improving respiratory function.</li>
+                </ul>
+                <button onclick="openModal('Pleural Effusion', 'POCUS facilitated the safe and accurate diagnosis and management of pleural effusion.')">Read More</button>
             </div>
         </section>
 
