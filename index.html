@@ -3,157 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POCUS Tools & Resources</title>
+    <title>POCUS Resources and Case Studies</title>
     <style>
         /* General Styling */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: #f9f9f9; /* Light background */
-            color: #333; /* Neutral text color */
+            background: linear-gradient(135deg, #f9f9f9, #e6e6e6);
+            color: #333;
+            overflow-x: hidden;
         }
 
         header {
-            background: linear-gradient(135deg, #4a90e2, #3a78c2); /* Gradient banner */
-            padding: 40px 20px;
+            background: linear-gradient(135deg, #4a90e2, #3a78c2);
+            padding: 60px 20px;
             text-align: center;
             color: #fff;
-            border-bottom: 5px solid #2a5d99; /* Slightly darker blue for separation */
         }
 
         header h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin: 0;
             text-transform: uppercase;
             letter-spacing: 3px;
             font-weight: bold;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
         }
 
         header p {
-            font-size: 1.2em;
-            margin: 10px 0 0;
-            opacity: 0.9;
+            font-size: 1.3em;
+            margin: 15px 0 0;
         }
 
         main {
             padding: 40px 20px;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
+        /* POCUS Resources */
         .resource {
-            background: #fff; /* Clean white card */
-            padding: 20px 25px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            background: #fff;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
 
         .resource:hover {
-            transform: translateY(-5px); /* Lift effect */
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .resource h2 {
-            font-size: 1.8em;
+            font-size: 2em;
             color: #4a90e2;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .resource p {
-            font-size: 1em;
+            font-size: 1.1em;
             color: #555;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .resource a {
             display: inline-block;
-            padding: 12px 30px;
-            font-size: 1.1em;
+            padding: 15px 35px;
+            font-size: 1.2em;
             color: #fff;
-            background: linear-gradient(135deg, #4a90e2, #3a78c2); /* Modern gradient */
-            border-radius: 25px;
+            background: linear-gradient(135deg, #4a90e2, #3a78c2);
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Button shadow */
-            transition: all 0.3s ease;
         }
 
         .resource a:hover {
-            background: linear-gradient(135deg, #3a78c2, #4a90e2); /* Reverse gradient */
-            transform: translateY(-3px); /* Lift effect */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+            background: linear-gradient(135deg, #3a78c2, #4a90e2);
         }
 
-        .resource a:active {
-            transform: translateY(1px); /* Press effect */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow on press */
+        /* Case Studies Section */
+        .case-studies {
+            margin-top: 50px;
         }
 
-        footer {
-            background: #333;
-            color: #fff;
+        .case-studies h2 {
+            font-size: 2.5em;
+            color: #4a90e2;
             text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .case {
+            background: #fff;
             padding: 20px;
-            margin-top: 40px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
-        footer p {
-            margin: 10px 0;
-            font-size: 0.9em;
+        .case:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
-        footer p strong {
+        .case h3 {
+            font-size: 1.8em;
+            color: #3a78c2;
+            margin-bottom: 10px;
+        }
+
+        .case p {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .case button {
+            background: linear-gradient(135deg, #4a90e2, #3a78c2);
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .case button:hover {
+            background: linear-gradient(135deg, #3a78c2, #4a90e2);
+        }
+
+        /* Anatomy Diagram Section */
+        .anatomy {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .anatomy h2 {
+            font-size: 2.5em;
             color: #4a90e2;
+            margin-bottom: 20px;
         }
 
-        footer a {
+        .anatomy img {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .anatomy img:hover {
+            transform: scale(1.05);
+        }
+
+        .anatomy-info {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .modal-content h3 {
+            font-size: 2em;
             color: #4a90e2;
-            text-decoration: none;
+            margin-bottom: 15px;
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        .modal-content p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .modal-content button {
+            background: linear-gradient(135deg, #4a90e2, #3a78c2);
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .modal-content button:hover {
+            background: linear-gradient(135deg, #3a78c2, #4a90e2);
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Advanced POCUS Tools</h1>
-        <p>Empowering Point-of-Care Ultrasound with the best resources</p>
+        <h1>POCUS Resources</h1>
+        <p>Explore case studies and interactive anatomy to enhance your knowledge!</p>
     </header>
     <main>
-        <!-- Resource 1 -->
-        <div class="resource">
-            <h2>POCUS Guide PDF</h2>
-            <p>Access the comprehensive guide to POCUS techniques. This guide provides detailed information on best practices and techniques for Point-of-Care Ultrasound.</p>
-            <a href="https://raw.githubusercontent.com/ashin97/QR-Code/ead625cd9cdf73734e482a6c380e118027ccf075/POCUS_Guide.pdf" download>
-                Download PDF
-            </a>
-        </div>
-        <!-- Resource 2 -->
-        <div class="resource">
-            <h2>POCUS Pocket Cards</h2>
-            <p>Explore pocket-sized cards for quick reference during clinical practice. These cards are perfect for on-the-go learning.</p>
-            <a href="https://www.pocus101.com/pocket-cards/" target="_blank">
-                View Pocket Cards
-            </a>
-        </div>
-        <!-- Resource 3 -->
-        <div class="resource">
-            <h2>POCUS Atlas</h2>
-            <p>Discover a collection of ultrasound images and cases to enhance your understanding and skills in clinical imaging.</p>
-            <a href="https://www.thepocusatlas.com/home" target="_blank">
-                Explore Atlas
-            </a>
-        </div>
+        <!-- POCUS Resources Section -->
+        <section>
+            <div class="resource">
+                <h2>POCUS Guide PDF</h2>
+                <p>Access the comprehensive guide to POCUS techniques. This guide provides detailed information on best practices and techniques for Point-of-Care Ultrasound.</p>
+                <a href="https://example.com" target="_blank">Download PDF</a>
+            </div>
+            <div class="resource">
+                <h2>POCUS Pocket Cards</h2>
+                <p>Explore pocket-sized cards for quick reference during clinical practice. These cards are perfect for on-the-go learning.</p>
+                <a href="https://example.com" target="_blank">View Pocket Cards</a>
+            </div>
+            <div class="resource">
+                <h2>POCUS Atlas</h2>
+                <p>Discover a collection of ultrasound images and cases to enhance your understanding and skills in clinical imaging.</p>
+                <a href="https://example.com" target="_blank">Explore Atlas</a>
+            </div>
+        </section>
+
+        <!-- Case Studies Section -->
+        <section class="case-studies">
+            <h2>POCUS Case Studies</h2>
+            <div class="case">
+                <h3>Case Study: Diagnosing Pneumothorax</h3>
+                <p>A 45-year-old male presented with acute shortness of breath...</p>
+                <button onclick="openModal('Diagnosing Pneumothorax', 'POCUS was used to detect pneumothorax, aiding in rapid intervention.')">Read More</button>
+            </div>
+            <div class="case">
+                <h3>Case Study: Cardiac Tamponade</h3>
+                <p>A 60-year-old female with a history of hypertension...</p>
+                <button onclick="openModal('Cardiac Tamponade', 'POCUS identified cardiac tamponade, prompting life-saving treatment.')">Read More</button>
+            </div>
+            <div class="case">
+                <h3>Case Study: Abdominal Free Fluid</h3>
+                <p>A 35-year-old male suffered blunt abdominal trauma...</p>
+                <button onclick="openModal('Abdominal Free Fluid', 'POCUS detected free fluid, enabling timely surgical intervention.')">Read More</button>
+            </div>
+            <div class="case">
+                <h3>Case Study: Pleural Effusion</h3>
+                <p>A 55-year-old patient reported persistent chest pain...</p>
+                <button onclick="openModal('Pleural Effusion', 'POCUS visualized pleural effusion, guiding thoracentesis safely.')">Read More</button>
+            </div>
+        </section>
+
+        <!-- Anatomy Diagram Section -->
+        <section class="anatomy">
+            <h2>Interactive Anatomy Diagram</h2>
+            <img src="https://via.placeholder.com/600x400" alt="Anatomy Diagram" onclick="showAnatomyInfo('Click on specific regions to learn about POCUS applications!')">
+            <div class="anatomy-info" id="anatomy-info"></div>
+        </section>
     </main>
-    <footer>
-        <p>Designed and coded by <strong>Austin Shinaberry</strong> to provide seamless access to POCUS resources.</p>
-        <p><strong>Disclaimer:</strong> The medical information linked through this page is provided for reference purposes only. The creator of this page does not claim authorship or responsibility for the accuracy, completeness, or validity of the content on the linked resources. Users are encouraged to consult qualified medical professionals or trusted sources for clinical guidance.</p>
-    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h3 id="modal-title"></h3>
+            <p id="modal-body"></p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Modal Functionality
+        function openModal(title, body) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-body').innerText = body;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Anatomy Diagram Interaction
+        function showAnatomyInfo(info) {
+            document.getElementById('anatomy-info').innerText = info;
+        }
+    </script>
 </body>
 </html>
