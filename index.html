@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POCUS Resources and Case Studies for Clinicians</title> <script src="https://cdn.tailwindcss.com"></script>
+    <title>POCUS Resources and Case Studies for Clinicians</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,36 +18,41 @@
         #modal.opacity-0 #modal-content-box { transform: scale(0.95); }
         .diagnosis-section.hidden { display: none; }
         /* Add a subtle border to images within the modal */
-        #modal-imaging img { border: 1px solid #e5e7eb; /* Tailwind gray-200 */ }
+        #modal-image-container img { border: 1px solid #e5e7eb; /* Tailwind gray-200 */ }
     </style>
 </head>
 <body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800 antialiased">
 
-    <header class="bg-gradient-to-br from-blue-600 to-blue-800 text-white text-center py-16 px-4 shadow-lg"> <h1 class="text-4xl md:text-5xl font-bold uppercase tracking-wider mb-3">POCUS Resources for Clinicians</h1>
-        <p class="text-xl md:text-2xl font-light mb-3">Empowering PAs and Physicians with Point-of-Care Ultrasound knowledge.</p> <small class="text-lg md:text-xl font-normal text-blue-100 block">"Enhance diagnostic accuracy and improve patient care at the bedside."</small>
+    <header class="bg-gradient-to-br from-blue-600 to-blue-800 text-white text-center py-16 px-4 shadow-lg">
+        <h1 class="text-4xl md:text-5xl font-bold uppercase tracking-wider mb-3">POCUS Resources for Clinicians</h1>
+        <p class="text-xl md:text-2xl font-light mb-3">Empowering PAs and Physicians with Point-of-Care Ultrasound knowledge.</p>
+        <small class="text-lg md:text-xl font-normal text-blue-100 block">"Enhance diagnostic accuracy and improve patient care at the bedside."</small>
     </header>
 
     <div class="max-w-5xl mx-auto p-4 md:p-8 mt-[-2rem] mb-8 relative z-10">
         <main class="bg-white rounded-xl shadow-xl p-6 md:p-10">
 
-            <section aria-labelledby="resources-heading" class="mb-16"> <h2 id="resources-heading" class="text-3xl md:text-4xl font-semibold text-blue-700 text-center mb-8">Core Learning Resources</h2> <div class="grid grid-cols-1 md:grid-cols-3 gap-6"> <div class="resource-card bg-gray-50 rounded-lg border border-gray-200 hover:shadow-md transition-shadow duration-300 p-6 overflow-hidden text-center">
+            <section aria-labelledby="resources-heading" class="mb-16">
+                <h2 id="resources-heading" class="text-3xl md:text-4xl font-semibold text-blue-700 text-center mb-8">Core Learning Resources</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="resource-card bg-gray-50 rounded-lg border border-gray-200 hover:shadow-md transition-shadow duration-300 p-6 overflow-hidden text-center">
                         <h3 class="text-xl font-semibold text-blue-600 mb-3">Comprehensive Guide</h3>
                         <p class="text-gray-600 mb-5 text-sm leading-relaxed">Detailed best practices and techniques for various POCUS applications.</p>
-                        <a href="https://placehold.co/pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-medium py-2 px-6 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out text-base">
+                        <a href="https://github.com/Health-Codex/QR-Code/blob/d6d14e6436c6a81533ce75a978f95b2b5a9de451/POCUS_Guide.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-medium py-2 px-6 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out text-base">
                             Download PDF
                         </a>
                     </div>
                     <div class="resource-card bg-gray-50 rounded-lg border border-gray-200 hover:shadow-md transition-shadow duration-300 p-6 overflow-hidden text-center">
                         <h3 class="text-xl font-semibold text-blue-600 mb-3">Quick Reference Cards</h3>
                         <p class="text-gray-600 mb-5 text-sm leading-relaxed">Pocket-sized cards for rapid review during clinical practice.</p>
-                        <a href="https://placehold.co/cards" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-medium py-2 px-6 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out text-base">
+                         <a href="https://www.pocus101.com/pocket-cards/" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-medium py-2 px-6 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out text-base">
                             View Cards
                         </a>
                     </div>
                     <div class="resource-card bg-gray-50 rounded-lg border border-gray-200 hover:shadow-md transition-shadow duration-300 p-6 overflow-hidden text-center">
                         <h3 class="text-xl font-semibold text-blue-600 mb-3">Image & Case Atlas</h3>
                         <p class="text-gray-600 mb-5 text-sm leading-relaxed">Enhance diagnostic skills with a diverse collection of ultrasound images and cases.</p>
-                        <a href="https://placehold.co/atlas" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-medium py-2 px-6 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out text-base">
+                         <a href="https://www.thepocusatlas.com/home" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-medium py-2 px-6 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out text-base">
                             Explore Atlas
                         </a>
                     </div>
@@ -54,8 +60,11 @@
             </section>
 
             <section class="case-studies mb-12" aria-labelledby="casestudies-heading">
-                <h2 id="casestudies-heading" class="text-3xl md:text-4xl font-semibold text-blue-700 text-center mb-10">Interactive Clinical Case Studies</h2> <div class="space-y-8"> <article class="case bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 p-6 md:p-8 overflow-hidden">
-                        <h3 class="text-xl font-semibold text-blue-800 mb-3">Case Study: Acute Shortness of Breath Post-Trauma</h3> <p class="text-gray-700 mb-3">A 45-year-old male presented with acute shortness of breath after a fall.</p>
+                <h2 id="casestudies-heading" class="text-3xl md:text-4xl font-semibold text-blue-700 text-center mb-10">Interactive Clinical Case Studies</h2>
+                <div class="space-y-8">
+                    <article class="case bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 p-6 md:p-8 overflow-hidden">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-3">Case Study: Acute Shortness of Breath Post-Trauma</h3>
+                        <p class="text-gray-700 mb-3">A 45-year-old male presented with acute shortness of breath after a fall.</p>
                         <ul class="list-disc list-inside text-gray-600 text-sm space-y-1 mb-4 pl-2">
                             <li><strong>Clinical Presentation:</strong> Sudden dyspnea, pleuritic chest pain, tachypnea, hypoxia, decreased breath sounds on right.</li>
                             <li><strong>POCUS Application:</strong> Lung Ultrasound.</li>
@@ -224,11 +233,17 @@
                 </figure>
             </section>
         </main>
-    </div> <div id="modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4 opacity-0" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-vignette modal-imaging modal-diagnosis-content" aria-hidden="true">
-        <div id="modal-content-box" class="bg-white rounded-lg shadow-xl p-6 md:p-8 max-w-3xl w-full relative transform scale-95 overflow-y-auto max-h-[90vh]"> <button id="modal-close-icon" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition-colors z-10" aria-label="Close modal"> <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </div>
+
+    <div id="modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4 opacity-0" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-vignette modal-imaging-text modal-diagnosis-explanation" aria-hidden="true">
+        <div id="modal-content-box" class="bg-white rounded-lg shadow-xl p-6 md:p-8 max-w-3xl w-full relative transform scale-95 overflow-y-auto max-h-[90vh]">
+            <button id="modal-close-icon" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition-colors z-10" aria-label="Close modal">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
 
-            <h3 id="modal-title" class="text-2xl md:text-3xl font-semibold text-blue-700 mb-6 text-center pr-8"></h3> <div class="mb-5 text-left border-b border-gray-200 pb-5"> <h4 class="text-xl font-semibold text-gray-800 mb-3">Clinical Vignette:</h4>
+            <h3 id="modal-title" class="text-2xl md:text-3xl font-semibold text-blue-700 mb-6 text-center pr-8"></h3>
+            <div class="mb-5 text-left border-b border-gray-200 pb-5">
+                <h4 class="text-xl font-semibold text-gray-800 mb-3">Clinical Vignette:</h4>
                 <p id="modal-vignette" class="text-gray-700 leading-relaxed"></p>
             </div>
 
@@ -241,7 +256,9 @@
                 </div>
             </div>
 
-            <div id="reveal-button-container" class="text-center mb-6 pt-4 border-t border-gray-200"> <button id="modal-reveal-button" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out text-lg"> Reveal Diagnosis
+            <div id="reveal-button-container" class="text-center mb-6 pt-4 border-t border-gray-200">
+                <button id="modal-reveal-button" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out text-lg">
+                    Reveal Diagnosis
                 </button>
             </div>
 
@@ -251,7 +268,8 @@
             </div>
 
             <div class="text-center mt-8">
-                <button id="modal-close-button" class="bg-gray-500 hover:bg-gray-600 text-white font-medium py-2 px-6 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out"> Close
+                <button id="modal-close-button" class="bg-gray-500 hover:bg-gray-600 text-white font-medium py-2 px-6 rounded-full shadow hover:shadow-md transition duration-300 ease-in-out">
+                    Close
                 </button>
             </div>
         </div>
@@ -263,11 +281,9 @@
             const modalContentBox = document.getElementById('modal-content-box');
             const modalTitle = document.getElementById('modal-title');
             const modalVignette = document.getElementById('modal-vignette');
-            // Updated imaging elements
             const modalImagingContent = document.getElementById('modal-imaging-content');
             const modalImagingText = document.getElementById('modal-imaging-text');
             const modalImageContainer = document.getElementById('modal-image-container');
-            // ---
             const revealButtonContainer = document.getElementById('reveal-button-container');
             const modalRevealButton = document.getElementById('modal-reveal-button');
             const diagnosisSection = document.getElementById('diagnosis-section');
@@ -282,56 +298,54 @@
             let previouslyFocusedElement = null;
             let currentDiagnosisTitle = '';
             let currentDiagnosisExplanation = '';
-            // Store image data
             let currentImagePlaceholder1 = '';
             let currentImageAlt1 = '';
             let currentImagePlaceholder2 = '';
             let currentImageAlt2 = '';
 
 
-            function openModal(data) { // Pass data object
+            function openModal(data) {
                 if (!modal || !modalTitle || !modalVignette || !modalImagingText || !modalImageContainer || !diagnosisSection || !modalRevealButton) return;
 
                 previouslyFocusedElement = document.activeElement;
 
-                // Populate initial content
                 modalTitle.textContent = data.title;
                 modalVignette.textContent = data.vignette;
-                modalImagingText.textContent = data.imaging; // Populate text description
+                modalImagingText.textContent = data.imaging;
 
-                // Store diagnosis data
                 currentDiagnosisTitle = data.diagnosisTitle;
                 currentDiagnosisExplanation = data.diagnosisExplanation;
-
-                // Store image data
                 currentImagePlaceholder1 = data.imagePlaceholder1;
                 currentImageAlt1 = data.imageAlt1;
                 currentImagePlaceholder2 = data.imagePlaceholder2;
                 currentImageAlt2 = data.imageAlt2;
 
-                // Clear previous images and add new ones
                 modalImageContainer.innerHTML = ''; // Clear old images
                 if (currentImagePlaceholder1 && currentImageAlt1) {
                     const img1 = document.createElement('img');
                     img1.src = currentImagePlaceholder1;
                     img1.alt = currentImageAlt1;
-                    img1.className = 'w-full h-auto rounded shadow object-contain mx-auto'; // Added object-contain
-                    img1.onerror = () => img1.src = 'https://placehold.co/300x200/fecaca/991b1b?text=Image+Error'; // Basic error handling
+                    img1.className = 'w-full h-auto rounded shadow object-contain mx-auto border border-gray-200';
+                    img1.onerror = () => {
+                        img1.src = `https://placehold.co/300x200/fecaca/991b1b?text=Error+Loading+Image`;
+                        img1.alt = 'Error loading image: ' + currentImageAlt1;
+                     };
                     modalImageContainer.appendChild(img1);
                 }
                  if (currentImagePlaceholder2 && currentImageAlt2) {
                     const img2 = document.createElement('img');
                     img2.src = currentImagePlaceholder2;
                     img2.alt = currentImageAlt2;
-                    img2.className = 'w-full h-auto rounded shadow object-contain mx-auto'; // Added object-contain
-                    img2.onerror = () => img2.src = 'https://placehold.co/300x200/fecaca/991b1b?text=Image+Error'; // Basic error handling
+                    img2.className = 'w-full h-auto rounded shadow object-contain mx-auto border border-gray-200';
+                    img2.onerror = () => {
+                        img2.src = `https://placehold.co/300x200/fecaca/991b1b?text=Error+Loading+Image`;
+                        img2.alt = 'Error loading image: ' + currentImageAlt2;
+                    };
                     modalImageContainer.appendChild(img2);
                 }
-                 // Adjust grid columns based on number of images
                  modalImageContainer.className = `grid gap-4 mt-4 ${currentImagePlaceholder1 && currentImagePlaceholder2 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'}`;
 
 
-                // Reset modal state
                 diagnosisSection.classList.add('hidden');
                 revealButtonContainer.classList.remove('hidden');
 
@@ -394,7 +408,7 @@
             function trapFocus(event) {
                 const focusableElements = Array.from(modal.querySelectorAll(
                     'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-                )).filter(el => !el.closest('.hidden') && el.offsetParent !== null); // Ensure element is visible
+                )).filter(el => !el.closest('.hidden') && el.offsetParent !== null);
 
                 if (focusableElements.length === 0) return;
                 const firstElement = focusableElements[0];
@@ -413,22 +427,20 @@
                 mainContent.addEventListener('click', (event) => {
                     const button = event.target.closest('.read-more-btn');
                     if (button) {
-                        // Collect all data attributes into an object
                         const caseData = {
                             title: button.dataset.title,
                             vignette: button.dataset.vignette,
                             imaging: button.dataset.imaging,
                             diagnosisTitle: button.dataset.diagnosisTitle,
                             diagnosisExplanation: button.dataset.diagnosisExplanation,
-                            imagePlaceholder1: button.dataset.imagePlaceholder1, // Get image data
+                            imagePlaceholder1: button.dataset.imagePlaceholder1,
                             imageAlt1: button.dataset.imageAlt1,
                             imagePlaceholder2: button.dataset.imagePlaceholder2,
                             imageAlt2: button.dataset.imageAlt2
                         };
 
-                        // Basic check if essential data exists
                         if (caseData.title && caseData.vignette && caseData.imaging && caseData.diagnosisTitle && caseData.diagnosisExplanation) {
-                            openModal(caseData); // Pass the whole object
+                            openModal(caseData);
                         } else {
                             console.error("Missing essential data attributes on button:", button);
                         }
@@ -441,7 +453,7 @@
                  if (anatomyInfo) { anatomyInfo.textContent = info; }
             }
             const defaultAnatomyText = "Focus or click the diagram and press Enter/Space for a summary of common POCUS applications by region.";
-            const anatomyDetailText = 'Common POCUS Regions: Cardiac (Subxiphoid, Parasternal, Apical), Lungs (Anterior, Lateral), Abdomen (RUQ, LUQ, Epigastric, Suprapubic), Lower Extremity Veins (Femoral, Popliteal).'; // More specific
+            const anatomyDetailText = 'Common POCUS Regions: Cardiac (Subxiphoid, Parasternal, Apical), Lungs (Anterior, Lateral), Abdomen (RUQ, LUQ, Epigastric, Suprapubic), Lower Extremity Veins (Femoral, Popliteal).';
             if (anatomyImg) {
                 anatomyImg.addEventListener('click', () => showAnatomyInfo(anatomyDetailText));
                 anatomyImg.addEventListener('keydown', (event) => {
@@ -449,7 +461,7 @@
                         event.preventDefault(); showAnatomyInfo(anatomyDetailText);
                     }
                 });
-                 anatomyImg.addEventListener('blur', () => { // Reset on blur
+                 anatomyImg.addEventListener('blur', () => {
                      showAnatomyInfo(defaultAnatomyText);
                  });
             }
