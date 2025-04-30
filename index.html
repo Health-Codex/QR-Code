@@ -34,31 +34,110 @@
             border-radius: 0.375rem; /* Rounded corners */
         }
 
-        /* --- Styles for interactive anatomy overlays --- */
+        /* --- Enhanced Styles for interactive anatomy overlays --- */
         .anatomy-overlay {
             position: absolute;
-            border: 2px solid transparent;
-            border-radius: 50%; /* Default circle, override below if needed */
+            border: 2px solid rgba(59, 130, 246, 0.7); /* Semi-transparent blue border */
+            border-radius: 12px; /* Rounded rectangle */
             cursor: pointer;
-            transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-            /* Add a subtle visual cue */
-            background-color: rgba(59, 130, 246, 0.1); /* Slightly more visible */
-        }
-        .anatomy-overlay:hover,
-        .anatomy-overlay:focus-visible {
-            background-color: rgba(59, 130, 246, 0.25); /* Blue-500 with opacity */
-            border-color: rgba(37, 99, 235, 0.8); /* Blue-600 with opacity */
+            transition: all 0.3s ease;
+            /* Simple, clean visual style */
+            background-color: rgba(59, 130, 246, 0.2); /* Light blue background */
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.3); /* Subtle glow */
+            z-index: 5; /* Ensure overlays are above the image */
         }
 
-        /* --- IMPORTANT: Adjust these overlay positions based on the ACTUAL diagram image rendering --- */
-        /* These are ESTIMATES for the new diagram and likely need fine-tuning */
-        #anatomy-region-cardiac { top: 30%; left: 40%; width: 20%; height: 18%; } /* Circle */
-        #anatomy-region-lungs { top: 25%; left: 20%; width: 60%; height: 25%; border-radius: 15px;} /* Rectangle */
-        #anatomy-region-ruq { top: 50%; left: 53%; width: 22%; height: 15%; border-radius: 10px; } /* Rectangle */
-        #anatomy-region-luq { top: 50%; left: 25%; width: 22%; height: 15%; border-radius: 10px; } /* Rectangle */
-        #anatomy-region-pelvis { top: 68%; left: 35%; width: 30%; height: 15%; border-radius: 10px; } /* Rectangle */
-        #anatomy-region-vascular-neck { top: 12%; left: 42%; width: 16%; height: 10%; border-radius: 8px; } /* Rectangle */
-        #anatomy-region-vascular-leg { top: 85%; left: 28%; width: 15%; height: 12%; border-radius: 8px; } /* Rectangle - Example for Femoral Triangle */
+        .anatomy-overlay:hover,
+        .anatomy-overlay:focus-visible {
+            background-color: rgba(59, 130, 246, 0.3);
+            border-color: rgba(37, 99, 235, 0.9); /* Darker blue border on hover/focus */
+            box-shadow: 0 0 12px rgba(37, 99, 235, 0.5); /* Enhanced glow */
+            transform: scale(1.03); /* Slight zoom effect on hover */
+        }
+
+        /* Pulse animation for active overlay */
+        .anatomy-overlay.active {
+            animation: pulse 2s infinite;
+            background-color: rgba(59, 130, 246, 0.4);
+            border-color: rgba(37, 99, 235, 1);
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.6);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 10px rgba(37, 99, 235, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.7); }
+            100% { box-shadow: 0 0 10px rgba(37, 99, 235, 0.5); }
+        }
+
+        /* 3D effect for the anatomy figure */
+        #anatomy-figure {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        #anatomy-diagram-img {
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+        }
+
+        /* --- UPDATED Overlay Positions for enhanced anatomical SVG model --- */
+        /* Neck (IJV area) */
+        #anatomy-region-vascular-neck {
+            top: 15%;
+            left: 40%;
+            width: 20%;
+            height: 8%;
+        }
+
+        /* Lungs */
+        #anatomy-region-lungs {
+            top: 30%;
+            left: 25%;
+            width: 50%;
+            height: 25%;
+        }
+
+        /* Cardiac (Heart) */
+        #anatomy-region-cardiac {
+            top: 30%;
+            left: 38%;
+            width: 24%;
+            height: 12%;
+            border-radius: 50%; /* Keep circular for heart */
+        }
+
+        /* RUQ (Liver, Gallbladder area) */
+        #anatomy-region-ruq {
+            top: 40%;
+            left: 52%;
+            width: 22%;
+            height: 15%;
+        }
+
+        /* LUQ (Spleen, Stomach area) */
+        #anatomy-region-luq {
+            top: 40%;
+            left: 26%;
+            width: 22%;
+            height: 15%;
+        }
+
+        /* Pelvis (Suprapubic/Bladder area) */
+        #anatomy-region-pelvis {
+            top: 60%;
+            left: 38%;
+            width: 24%;
+            height: 12%;
+        }
+
+        /* Leg Vascular (Femoral Triangle area) */
+        #anatomy-region-vascular-leg {
+            top: 75%;
+            left: 40%;
+            width: 20%;
+            height: 12%;
+        }
 
     </style>
 </head>
@@ -178,7 +257,7 @@
                              <div>
                                 <dt class="font-semibold text-gray-800 inline">Clinical Presentation:</dt>
                                 <dd class="inline text-gray-600 ml-1">Hypotension (BP 90/60), tachycardia (HR 130), abdominal tenderness (especially LUQ), mechanism concerning for intra-abdominal injury.</dd>
-                             </div>
+                            </div>
                             <div>
                                 <dt class="font-semibold text-gray-800 inline">POCUS Application:</dt>
                                 <dd class="inline text-gray-600 ml-1">FAST Exam (Focused Assessment with Sonography for Trauma).</dd>
@@ -198,7 +277,7 @@
                                 data-image-alt-2="POCUS FAST LUQ view: free fluid (anechoic area) in the splenorenal recess"
                                 data-diagnosis-title="Diagnosis: Hemoperitoneum (Positive FAST Exam)"
                                 data-diagnosis-explanation="Interpretation & Outcome: The primary goal of the FAST exam in unstable trauma is to identify free intraperitoneal fluid, which in this context is presumed to be blood (hemoperitoneum). The presence of anechoic free fluid in multiple dependent areas (Morison's pouch, splenorenal recess, pelvis) constitutes a positive FAST exam. This strongly indicates significant intra-abdominal hemorrhage. Given the patient's hemodynamic instability and positive FAST, he was taken emergently to the operating room for exploratory laparotomy, where a splenic laceration and mesenteric injury were found and repaired.">
-                             See Details & Findings
+                            See Details & Findings
                         </button>
                     </article>
 
@@ -206,7 +285,7 @@
                         <h3 class="text-xl font-semibold text-blue-800 mb-4">Case Study: Progressive Dyspnea in Cancer Patient</h3>
                         <p class="text-gray-700 mb-4">A 55-year-old patient with known metastatic lung cancer presented with worsening shortness of breath over several days.</p>
                         <dl class="text-sm space-y-2 mb-5">
-                             <div>
+                            <div>
                                 <dt class="font-semibold text-gray-800 inline">Clinical Presentation:</dt>
                                 <dd class="inline text-gray-600 ml-1">Progressive dyspnea, orthopnea, non-productive cough. Exam shows dullness to percussion and decreased breath sounds over the left lower lung field.</dd>
                             </div>
@@ -229,7 +308,7 @@
                                 data-image-alt-2="POCUS: 'spine sign' indicative of pleural effusion"
                                 data-diagnosis-title="Diagnosis: Large Malignant Pleural Effusion"
                                 data-diagnosis-explanation="Interpretation & Outcome: POCUS rapidly confirms a large pleural effusion as the cause of the patient's symptoms and physical exam findings. Given the history, this is highly likely to be a malignant effusion. POCUS accurately assesses the size and location, identifies key landmarks (diaphragm, lung), and allows selection of a safe site for drainage, avoiding injury to underlying structures. A POCUS-guided thoracentesis was performed, removing 1.5L of fluid, resulting in significant improvement in dyspnea. Fluid analysis confirmed malignant cells.">
-                             See Details & Findings
+                            See Details & Findings
                         </button>
                     </article>
 
@@ -260,7 +339,7 @@
                                 data-image-alt-2="POCUS DVT Scan: Non-compressible popliteal vein"
                                 data-diagnosis-title="Diagnosis: Deep Vein Thrombosis (DVT)"
                                 data-diagnosis-explanation="Interpretation & Outcome: Failure of the common femoral vein and/or popliteal vein to fully compress with adequate probe pressure is the primary diagnostic criterion for DVT using the simplified 2- or 3-point compression technique. Non-compressibility indicates the presence of thrombus within the vein. This positive POCUS finding allows for rapid initiation of anticoagulation therapy, reducing the risk of pulmonary embolism. The patient was started on therapeutic anticoagulation.">
-                             See Details & Findings
+                            See Details & Findings
                         </button>
                     </article>
 
@@ -299,7 +378,7 @@
                         <h3 class="text-xl font-semibold text-blue-800 mb-4">Case Study: Elderly Male with Back Pain & Syncope</h3>
                         <p class="text-gray-700 mb-4">A 75-year-old male with known hypertension presented with sudden onset severe back pain and syncope.</p>
                         <dl class="text-sm space-y-2 mb-5">
-                             <div>
+                            <div>
                                 <dt class="font-semibold text-gray-800 inline">Clinical Presentation:</dt>
                                 <dd class="inline text-gray-600 ml-1">Sudden severe tearing back/abdominal pain, syncope, hypotension (BP 80/50), tachycardia (HR 110), pale and diaphoretic.</dd>
                             </div>
@@ -330,22 +409,64 @@
 
             <section class="anatomy text-center mb-12" aria-labelledby="anatomy-heading">
                 <h2 id="anatomy-heading" class="text-3xl md:text-4xl font-semibold text-blue-700 mb-8">Interactive POCUS Anatomy</h2>
-                <figure class="max-w-xl mx-auto relative" id="anatomy-figure">
-                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Torso_front_diagram_regions.svg/512px-Torso_front_diagram_regions.svg.png"
-                         alt="Diagram of human torso showing major organs and regions relevant to POCUS: Heart (Cardiac), Lungs, Liver/Gallbladder (RUQ), Spleen/Stomach (LUQ), Pelvis, Neck, Leg (Femoral)."
-                         id="anatomy-diagram-img"
-                         class="w-full h-auto rounded-lg shadow-md block border border-gray-300 bg-white">
+                <figure class="max-w-md mx-auto relative" id="anatomy-figure">
+                    <!-- Enhanced 3D-like container with depth effect -->
+                    <div class="anatomy-container relative overflow-hidden rounded-xl shadow-2xl border-2 border-blue-100">
+                        <!-- Enhanced 3D human body model using SVG with gradients and shadows -->
+                        <!-- Using realistic anatomical image from Wikimedia Commons -->
+                        <img src="anatomy_skeleton_organs.svg" id="anatomy-diagram-img" class="w-full h-auto block bg-white" alt="Human anatomy diagram with organs and skeleton" />
 
-                    <div id="anatomy-region-cardiac" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Cardiac Area (Heart)" data-info="Cardiac: Assess global function (LV/RV squeeze), pericardial effusion/tamponade, severe RV strain (PE), gross valvular dysfunction, volume status (IVC). Key views: Parasternal Long/Short Axis, Apical 4-Chamber, Subxiphoid."></div>
-                    <div id="anatomy-region-lungs" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Lung Areas (Chest)" data-info="Lungs: Evaluate for pneumothorax (sliding, lung point), B-lines (pulmonary edema, interstitial syndromes), consolidation (pneumonia), pleural effusion. Scan multiple anterior/lateral/posterior zones."></div>
-                    <div id="anatomy-region-ruq" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Right Upper Quadrant (RUQ - Liver, Gallbladder)" data-info="RUQ: Assess gallbladder (stones, wall thickening, CBD dilation, sonographic Murphy's), liver parenchyma, Morison's pouch (FAST free fluid), right kidney (hydronephrosis), right pleural space (effusion)."></div>
-                    <div id="anatomy-region-luq" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Left Upper Quadrant (LUQ - Spleen, Stomach)" data-info="LUQ: Assess spleen, splenorenal recess (FAST free fluid), left kidney (hydronephrosis), left pleural space (effusion), stomach (distension - less common POCUS)."></div>
-                    <div id="anatomy-region-pelvis" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Pelvic Area (Bladder)" data-info="Pelvis: Assess for free fluid (FAST - suprapubic view, pouch of Douglas), bladder volume/catheter placement. In OB/Gyn: early pregnancy assessment, ectopic pregnancy screening."></div>
-                    <div id="anatomy-region-vascular-neck" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Neck Vascular (IJV)" data-info="Neck Vascular: Assess internal jugular vein (IJV) patency, size, and relationship to carotid artery for central venous catheter placement guidance."></div>
-                    <div id="anatomy-region-vascular-leg" class="anatomy-overlay" tabindex="0" role="button" aria-label="Interactive Region: Leg Vascular (Femoral)" data-info="Leg Vascular: Assess common femoral vein (CFV) and popliteal vein (PV) compressibility for proximal Deep Vein Thrombosis (DVT) screening (2-point or 3-point compression technique)."></div>
+                        <!-- Overlay effect for 3D appearance -->
+                        <div class="absolute inset-0 pointer-events-none shadow-inner"
+                             style="box-shadow: inset 0 0 30px rgba(0,0,0,0.2), inset 0 0 10px rgba(255,255,255,0.5);">
+                        </div>
 
-                    <figcaption id="anatomy-info" class="mt-5 text-base text-gray-700 min-h-[4.5em] leading-relaxed bg-gray-50 p-4 rounded-md border border-gray-200 shadow-inner">
-                        Explore POCUS applications: Click or focus on a highlighted region above and press Enter/Space. (Overlay positions may need adjustment).
+                        <!-- Interactive anatomy regions with enhanced styling -->
+                        <div id="anatomy-region-vascular-neck" class="anatomy-overlay" tabindex="0" role="button"
+                             aria-label="Interactive Region: Neck Vascular (IJV)"
+                             data-info="<strong>Neck Vascular:</strong> Assess internal jugular vein (IJV) patency, size, and relationship to carotid artery for central venous catheter placement guidance. <br><br><em>Key POCUS Applications:</em> Central line placement, volume status assessment, identification of venous thrombosis."
+                             data-region="neck"></div>
+
+                        <div id="anatomy-region-lungs" class="anatomy-overlay" tabindex="0" role="button"
+                             aria-label="Interactive Region: Lung Areas (Chest)"
+                             data-info="<strong>Lungs:</strong> Evaluate for pneumothorax (sliding, lung point), B-lines (pulmonary edema, interstitial syndromes), consolidation (pneumonia), pleural effusion. <br><br><em>Key POCUS Applications:</em> BLUE protocol, eFAST exam, lung sliding assessment, A-lines and B-lines identification, pleural effusion quantification."
+                             data-region="lungs"></div>
+
+                        <div id="anatomy-region-cardiac" class="anatomy-overlay" tabindex="0" role="button"
+                             aria-label="Interactive Region: Cardiac Area (Heart)"
+                             data-info="<strong>Cardiac:</strong> Assess global function (LV/RV squeeze), pericardial effusion/tamponade, severe RV strain (PE), gross valvular dysfunction, volume status (IVC). <br><br><em>Key POCUS Applications:</em> FOCUS exam, RUSH protocol, pericardial effusion assessment, ejection fraction estimation, IVC collapsibility."
+                             data-region="heart"></div>
+
+                        <div id="anatomy-region-ruq" class="anatomy-overlay" tabindex="0" role="button"
+                             aria-label="Interactive Region: Right Upper Quadrant (RUQ - Liver, Gallbladder)"
+                             data-info="<strong>RUQ:</strong> Assess gallbladder (stones, wall thickening, CBD dilation, sonographic Murphy's), liver parenchyma, Morison's pouch (FAST free fluid), right kidney (hydronephrosis), right pleural space (effusion). <br><br><em>Key POCUS Applications:</em> FAST exam, biliary pathology assessment, hydronephrosis evaluation, hepatic vein assessment."
+                             data-region="ruq"></div>
+
+                        <div id="anatomy-region-luq" class="anatomy-overlay" tabindex="0" role="button"
+                             aria-label="Interactive Region: Left Upper Quadrant (LUQ - Spleen, Stomach)"
+                             data-info="<strong>LUQ:</strong> Assess spleen (size, texture), splenorenal recess (FAST free fluid), left kidney (hydronephrosis), left pleural space (effusion). <br><br><em>Key POCUS Applications:</em> FAST exam, splenic size assessment, renal pathology evaluation, perisplenic fluid detection."
+                             data-region="luq"></div>
+
+                        <div id="anatomy-region-pelvis" class="anatomy-overlay" tabindex="0" role="button"
+                             aria-label="Interactive Region: Pelvic Area (Bladder)"
+                             data-info="<strong>Pelvis:</strong> Assess for free fluid (FAST - suprapubic view, pouch of Douglas), bladder volume/catheter placement. <br><br><em>Key POCUS Applications:</em> FAST exam, bladder volume assessment, urinary retention evaluation, early pregnancy assessment, ectopic pregnancy screening."
+                             data-region="pelvis"></div>
+
+                        <div id="anatomy-region-vascular-leg" class="anatomy-overlay" tabindex="0" role="button"
+                             aria-label="Interactive Region: Leg Vascular (Femoral)"
+                             data-info="<strong>Leg Vascular:</strong> Assess common femoral vein (CFV) and popliteal vein (PV) compressibility for proximal Deep Vein Thrombosis (DVT) screening. <br><br><em>Key POCUS Applications:</em> 2-point or 3-point compression technique for DVT, vascular access guidance, arterial flow assessment."
+                             data-region="leg"></div>
+                    </div>
+
+                    <!-- Enhanced information display with HTML formatting support -->
+                    <figcaption id="anatomy-info" class="mt-5 text-base text-gray-700 min-h-[8em] leading-relaxed bg-gradient-to-br from-blue-50 to-white p-5 rounded-lg border border-blue-200 shadow-inner">
+                        <div class="flex items-center justify-center mb-2 text-blue-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="font-medium">Interactive POCUS Anatomy Guide</span>
+                        </div>
+                        <p id="anatomy-info-text">Explore POCUS applications by clicking on the highlighted anatomical regions. Each region shows key ultrasound applications and clinical relevance.</p>
                     </figcaption>
                 </figure>
             </section>
@@ -415,7 +536,8 @@
             const anatomyFigure = document.getElementById('anatomy-figure');
             const anatomyInfo = document.getElementById('anatomy-info');
             const anatomyOverlays = document.querySelectorAll('.anatomy-overlay');
-            const defaultAnatomyText = anatomyInfo ? anatomyInfo.textContent.trim() : "Explore POCUS applications by interacting with the diagram."; // Store initial text safely
+            const anatomyInfoTextElement = document.getElementById('anatomy-info-text');
+            const defaultAnatomyText = anatomyInfoTextElement ? anatomyInfoTextElement.innerHTML : "Explore POCUS applications by clicking on the highlighted anatomical regions. Each region shows key ultrasound applications and clinical relevance.";
 
             // --- State Variables ---
             let previouslyFocusedElement = null; // To return focus on modal close
@@ -428,32 +550,32 @@
              * @param {string} src - Image source URL.
              * @param {string} alt - Image alt text.
              */
-             function addImageToModal(src, alt) {
-                // Add console log before setting src
-                console.log(`Attempting to load image: ${src}`);
-                const img = document.createElement('img');
-                // Validate src before assigning
-                if (typeof src !== 'string' || src.trim() === '') {
-                    console.error(`Invalid image src provided: ${src}. Displaying fallback.`);
-                    img.src = `https://placehold.co/400x300/fecaca/991b1b?text=Invalid+Image+Source`; // Placeholder for invalid source
-                    img.alt = 'Error: Invalid image source provided - ' + (alt || 'No description available.');
-                } else {
-                    img.src = src;
-                    img.alt = alt || 'Image description not provided.'; // Provide default alt text
-                }
-                img.loading = 'lazy'; // Defer loading off-screen images
-                img.className = 'w-full h-auto rounded shadow object-contain mx-auto border border-gray-200 bg-gray-50'; // Style the image
+              function addImageToModal(src, alt) {
+                  // Add console log before setting src
+                  console.log(`Attempting to load image: ${src}`);
+                  const img = document.createElement('img');
+                  // Validate src before assigning
+                  if (typeof src !== 'string' || src.trim() === '') {
+                      console.error(`Invalid image src provided: ${src}. Displaying fallback.`);
+                      img.src = `https://placehold.co/400x300/fecaca/991b1b?text=Invalid+Image+Source`; // Placeholder for invalid source
+                      img.alt = 'Error: Invalid image source provided - ' + (alt || 'No description available.');
+                  } else {
+                      img.src = src;
+                      img.alt = alt || 'Image description not provided.'; // Provide default alt text
+                  }
+                  img.loading = 'lazy'; // Defer loading off-screen images
+                  img.className = 'w-full h-auto rounded shadow object-contain mx-auto border border-gray-200 bg-gray-50'; // Style the image
 
-                // Error handling for broken image links or network issues
-                img.onerror = () => {
-                    // Add console log inside onerror
-                    console.error(`ERROR loading image: ${img.src}. Displaying fallback.`);
-                    // Fallback for external load failures
-                    img.src = `https://placehold.co/400x300/fecaca/991b1b?text=Image+Load+Error`; // Display error placeholder
-                    img.alt = 'Error: Failed to load image - ' + (alt || 'No description available.'); // Update alt text
-                };
-                modalImageContainer.appendChild(img); // Add the image to the container
-            }
+                  // Error handling for broken image links or network issues
+                  img.onerror = () => {
+                      // Add console log inside onerror
+                      console.error(`ERROR loading image: ${img.src}. Displaying fallback.`);
+                      // Fallback for external load failures
+                      img.src = `https://placehold.co/400x300/fecaca/991b1b?text=Image+Load+Error`; // Display error placeholder
+                      img.alt = 'Error: Failed to load image - ' + (alt || 'No description available.'); // Update alt text
+                  };
+                  modalImageContainer.appendChild(img); // Add the image to the container
+              }
 
 
             /**
@@ -511,8 +633,8 @@
                 });
 
 
-                // Set focus to the close icon button after a short delay to allow rendering
-                 setTimeout(() => closeModalIcon.focus(), 50);
+                 // Set focus to the close icon button after a short delay to allow rendering
+                  setTimeout(() => closeModalIcon.focus(), 50);
 
 
                 // Add event listeners for modal interaction
@@ -658,23 +780,23 @@
                     if (button) { // Check if a button was clicked
                          // *** Use getAttribute to read data attributes directly ***
                          const caseData = {
-                            title: button.getAttribute('data-title'),
-                            vignette: button.getAttribute('data-vignette'),
-                            imaging: button.getAttribute('data-imaging'),
-                            diagnosisTitle: button.getAttribute('data-diagnosis-title'),
-                            diagnosisExplanation: button.getAttribute('data-diagnosis-explanation'),
-                            imagePlaceholder1: button.getAttribute('data-image-placeholder-1'), // Use getAttribute
-                            imageAlt1: button.getAttribute('data-image-alt-1'),             // Use getAttribute
-                            imagePlaceholder2: button.getAttribute('data-image-placeholder-2'), // Use getAttribute
-                            imageAlt2: button.getAttribute('data-image-alt-2')              // Use getAttribute
+                             title: button.getAttribute('data-title'),
+                             vignette: button.getAttribute('data-vignette'),
+                             imaging: button.getAttribute('data-imaging'),
+                             diagnosisTitle: button.getAttribute('data-diagnosis-title'),
+                             diagnosisExplanation: button.getAttribute('data-diagnosis-explanation'),
+                             imagePlaceholder1: button.getAttribute('data-image-placeholder-1'), // Use getAttribute
+                             imageAlt1: button.getAttribute('data-image-alt-1'),             // Use getAttribute
+                             imagePlaceholder2: button.getAttribute('data-image-placeholder-2'), // Use getAttribute
+                             imageAlt2: button.getAttribute('data-image-alt-2')              // Use getAttribute
                          };
 
                          // *** Update validation check to use the retrieved attributes ***
                          if (caseData.title && caseData.vignette && caseData.imaging && caseData.diagnosisTitle && caseData.diagnosisExplanation && caseData.imagePlaceholder1 && caseData.imageAlt1) {
-                            openModal(caseData);
+                             openModal(caseData);
                          } else {
-                             // Log the button itself and the collected data for debugging
-                             console.error("Button clicked, but missing essential data attributes. Button:", button, "Collected Data:", caseData);
+                              // Log the button itself and the collected data for debugging
+                              console.error("Button clicked, but missing essential data attributes. Button:", button, "Collected Data:", caseData);
                          }
                     }
                 });
@@ -683,48 +805,216 @@
             }
 
 
-            // --- Interactive Anatomy Diagram Logic ---
+            // --- Enhanced Interactive Anatomy Diagram Logic ---
+
+            // Get the anatomy info text element for more precise targeting
+            const anatomyInfoText = document.getElementById('anatomy-info-text');
+            const anatomyContainer = document.querySelector('.anatomy-container');
+            const anatomyDiagramImg = document.getElementById('anatomy-diagram-img');
+
+            // Track the currently active region
+            let activeRegion = null;
 
             /**
-             * Updates the anatomy information caption text.
-             * @param {string} infoText - The text to display. If empty, shows default text.
+             * Updates the anatomy information caption with enhanced HTML content.
+             * @param {string} infoHTML - The HTML content to display. If empty, shows default text.
+             * @param {HTMLElement} activeOverlay - The currently active overlay element.
              */
-            function showAnatomyInfo(infoText) {
-                if (anatomyInfo) {
-                    anatomyInfo.textContent = infoText || defaultAnatomyText;
+            function showAnatomyInfo(infoHTML, activeOverlay = null) {
+                if (!anatomyInfoText) return;
+
+                // Remove active class from all overlays first
+                anatomyOverlays.forEach(overlay => {
+                    overlay.classList.remove('active');
+                });
+
+                // If we have an active overlay, add the active class to it
+                if (activeOverlay) {
+                    activeOverlay.classList.add('active');
+
+                    // Apply subtle 3D tilt effect to the image based on region position
+                    if (anatomyDiagramImg && anatomyContainer) {
+                        const region = activeOverlay.dataset.region || '';
+                        applyTiltEffect(region);
+                    }
+                } else {
+                    // Reset the image transform when no region is active
+                    if (anatomyDiagramImg) {
+                        anatomyDiagramImg.style.transform = 'translateZ(0)';
+                    }
+                }
+
+                // Update the info text with HTML content
+                if (infoHTML) {
+                    anatomyInfoText.innerHTML = infoHTML;
+                } else {
+                    anatomyInfoText.innerHTML = defaultAnatomyText;
                 }
             }
 
-            // Setup listeners for anatomy overlays if they exist
-            if (anatomyFigure && anatomyOverlays.length > 0 && anatomyInfo) {
-                anatomyOverlays.forEach(overlay => {
-                    overlay.addEventListener('click', () => {
-                        const info = overlay.dataset.info; // dataset is fine here as 'data-info' has no hyphen
-                        showAnatomyInfo(info);
+            /**
+             * Applies a subtle 3D tilt effect to the anatomy image based on the active region.
+             * @param {string} region - The active region identifier.
+             */
+            function applyTiltEffect(region) {
+                if (!anatomyDiagramImg) return;
+
+                // Default transform
+                let transform = 'translateZ(0)';
+
+                // Apply different transforms based on region
+                switch(region) {
+                    case 'neck':
+                        transform = 'perspective(1000px) rotateX(5deg) translateZ(10px)';
+                        break;
+                    case 'lungs':
+                        transform = 'perspective(1000px) rotateY(0deg) translateZ(15px)';
+                        break;
+                    case 'heart':
+                        transform = 'perspective(1000px) rotateY(-3deg) translateZ(20px)';
+                        break;
+                    case 'ruq':
+                        transform = 'perspective(1000px) rotateY(-5deg) rotateX(-2deg) translateZ(15px)';
+                        break;
+                    case 'luq':
+                        transform = 'perspective(1000px) rotateY(5deg) rotateX(-2deg) translateZ(15px)';
+                        break;
+                    case 'pelvis':
+                        transform = 'perspective(1000px) rotateX(-5deg) translateZ(10px)';
+                        break;
+                    case 'leg':
+                        transform = 'perspective(1000px) rotateX(-8deg) translateZ(5px)';
+                        break;
+                    default:
+                        transform = 'translateZ(0)';
+                }
+
+                // Apply the transform with a smooth transition
+                anatomyDiagramImg.style.transform = transform;
+            }
+
+            /**
+             * Handles click or keyboard activation of an anatomy region.
+             * @param {HTMLElement} overlay - The overlay element being activated.
+             */
+            function activateRegion(overlay) {
+                if (!overlay) return;
+
+                // Get the info HTML from the data attribute
+                const infoHTML = overlay.dataset.info;
+
+                // If this is already the active region, deactivate it
+                if (activeRegion === overlay) {
+                    activeRegion = null;
+                    showAnatomyInfo(null);
+                } else {
+                    // Otherwise, activate the new region
+                    activeRegion = overlay;
+                    showAnatomyInfo(infoHTML, overlay);
+
+                    // Ensure the overlay is visible (scroll into view if needed)
+                    overlay.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            }
+
+            // Setup enhanced listeners for anatomy overlays if they exist
+            if (anatomyFigure && anatomyOverlays.length > 0 && anatomyInfoText) {
+                // Add a subtle hover effect to the entire container
+                if (anatomyContainer) {
+                    anatomyContainer.addEventListener('mousemove', (event) => {
+                        // Only apply hover effect if no region is currently active
+                        if (!activeRegion) {
+                            const rect = anatomyContainer.getBoundingClientRect();
+                            const x = event.clientX - rect.left; // x position within the element
+                            const y = event.clientY - rect.top;  // y position within the element
+
+                            // Calculate the tilt based on mouse position
+                            const centerX = rect.width / 2;
+                            const centerY = rect.height / 2;
+                            const tiltX = (y - centerY) / 20; // Divide by a larger number for subtler effect
+                            const tiltY = (centerX - x) / 20;
+
+                            // Apply the tilt effect
+                            if (anatomyDiagramImg) {
+                                anatomyDiagramImg.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(5px)`;
+                            }
+                        }
                     });
+
+                    // Reset transform when mouse leaves the container
+                    anatomyContainer.addEventListener('mouseleave', () => {
+                        // Only reset if no region is active
+                        if (!activeRegion && anatomyDiagramImg) {
+                            anatomyDiagramImg.style.transform = 'translateZ(0)';
+                        }
+                    });
+                }
+
+                // Enhanced overlay interaction
+                anatomyOverlays.forEach(overlay => {
+                    // Click activation
+                    overlay.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        activateRegion(overlay);
+                    });
+
+                    // Keyboard activation
                     overlay.addEventListener('keydown', (event) => {
                         if (event.key === 'Enter' || event.key === ' ') {
                             event.preventDefault();
-                            const info = overlay.dataset.info;
-                            showAnatomyInfo(info);
+                            activateRegion(overlay);
                         }
                     });
+
+                    // Focus handling
+                    overlay.addEventListener('focus', () => {
+                        // Show info without activating fully
+                        if (activeRegion !== overlay) {
+                            showAnatomyInfo(overlay.dataset.info, overlay);
+                        }
+                    });
+
                     overlay.addEventListener('blur', () => {
+                        // Use setTimeout to allow focus to shift before checking
                         setTimeout(() => {
-                             const activeElementIsOverlay = document.activeElement && document.activeElement.classList.contains('anatomy-overlay');
-                             if (!anatomyFigure.contains(document.activeElement) || !activeElementIsOverlay) {
-                                 showAnatomyInfo(defaultAnatomyText);
-                             }
+                            // Only reset if focus moved outside overlays and there's no active region
+                            const activeElementIsOverlay = document.activeElement &&
+                                                          document.activeElement.classList.contains('anatomy-overlay');
+                            if (!activeElementIsOverlay && !activeRegion) {
+                                showAnatomyInfo(null);
+                            }
                         }, 0);
                     });
+
+                    // Mouse hover effects
+                    overlay.addEventListener('mouseenter', () => {
+                        // Only show info if this isn't already the active region
+                        if (activeRegion !== overlay) {
+                            showAnatomyInfo(overlay.dataset.info, overlay);
+                        }
+                    });
+
+                    overlay.addEventListener('mouseleave', () => {
+                        // Only reset if this isn't the active region
+                        if (activeRegion !== overlay) {
+                            showAnatomyInfo(null);
+                        }
+                    });
                 });
-                 anatomyFigure.addEventListener('click', (event) => {
-                    if (!event.target.classList.contains('anatomy-overlay')) {
-                        showAnatomyInfo(defaultAnatomyText);
+
+                // Add a click listener to the figure background to deactivate regions
+                anatomyFigure.addEventListener('click', (event) => {
+                    // Only deactivate if clicking directly on the background (not an overlay or the info box)
+                    if (!event.target.classList.contains('anatomy-overlay') &&
+                        !anatomyInfo.contains(event.target) &&
+                        activeRegion) {
+                        activeRegion = null;
+                        showAnatomyInfo(null);
                     }
-                 });
-            } else if (anatomyInfo) {
-                anatomyInfo.textContent = "Interactive anatomy diagram component not fully loaded.";
+                });
+
+            } else if (anatomyInfoText) {
+                anatomyInfoText.innerHTML = "<strong>Error:</strong> Interactive anatomy diagram components not fully loaded.";
                 console.warn("Anatomy overlays or figure container not found.");
             }
 
